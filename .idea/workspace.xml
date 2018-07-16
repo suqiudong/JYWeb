@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64e9440d-317f-4d00-b1c0-733d1e1894cb" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>var country = [{ &quot;value&quot;: &quot;阿富汗&quot; }, { &quot;value&quot;: &quot;阿尔巴尼亚&quot; }, { &quot;value&quot;: &quot;南极洲&quot; }, { &quot;value&quot;: &quot;安道尔&quot; }, { &quot;value&quot;: &quot;美属萨摩亚&quot; }, { &quot;value&quot;: &quot;安哥拉&quot; }, { &quot;value&quot;: &quot;安提瓜&quot; }, { &quot;value&quot;: &quot;阿根廷&quot; }, { &quot;value&quot;: &quot;澳大利亚&quot; }, { &quot;value&quot;: &quot;奥地利&quot; }, { &quot;value&quot;: &quot;巴哈马&quot; }, { &quot;value&quot;: &quot;巴林&quot; }, { &quot;value&quot;: &quot;孟加拉&quot; }, { &quot;value&quot;: &quot;巴巴多斯&quot; }, { &quot;value&quot;: &quot;比利时&quot; }, { &quot;value&quot;: &quot;百慕大&quot; }, { &quot;value&quot;: &quot;不丹&quot; }, { &quot;value&quot;: &quot;玻利维亚&quot; }, { &quot;value&quot;: &quot;博茨瓦纳&quot; }, { &quot;value&quot;: &quot;布维岛&quot; }, { &quot;value&quot;: &quot;巴西&quot; }, { &quot;value&quot;: &quot;伯利兹&quot; }, { &quot;value&quot;: &quot;英属印度洋领土&quot; }, { &quot;value&quot;: &quot;所罗门群岛&quot; }, { &quot;value&quot;: &quot;英属维尔京群岛&quot; }, { &quot;value&quot;: &quot;文莱&quot; }, { &quot;value&quot;: &quot;保加利亚&quot; }, { &quot;value&quot;: &quot;缅甸&quot; }, { &quot;value&quot;: &quot;布隆迪&quot; }, { &quot;value&quot;: &quot;白俄罗斯&quot; }, { &quot;value&quot;: &quot;柬埔寨&quot; }, { &quot;value&quot;: &quot;喀麦隆&quot; }, { &quot;value&quot;: &quot;加拿大&quot; }, { &quot;value&quot;: &quot;坎顿和恩德贝里群岛&quot; }, { &quot;value&quot;: &quot;佛得角&quot; }, { &quot;value&quot;: &quot;开曼群岛&quot; }, { &quot;value&quot;: &quot;中非&quot; }, { &quot;value&quot;: &quot;斯里兰卡&quot; }, { &quot;value&quot;: &quot;乍得&quot; }, { &quot;value&quot;: &quot;智利&quot; }, { &quot;value&quot;: &quot;中国&quot; }, { &quot;value&quot;: &quot;圣诞岛&quot; }, { &quot;value&quot;: &quot;可可(基林)群岛&quot; }, { &quot;value&quot;: &quot;哥伦比亚&quot; }, { &quot;value&quot;: &quot;科摩罗&quot; }, { &quot;value&quot;: &quot;刚果&quot; }, { &quot;value&quot;: &quot;扎伊尔&quot; }, { &quot;value&quot;: &quot;库克群岛&quot; }, { &quot;value&quot;: &quot;哥斯达黎加&quot; }, { &quot;value&quot;: &quot;古巴&quot; }, { &quot;value&quot;: &quot;塞浦路斯&quot; }, { &quot;value&quot;: &quot;捷克&quot; }, { &quot;value&quot;: &quot;斯洛伐克&quot; }, { &quot;value&quot;: &quot;贝宁&quot; }, { &quot;value&quot;: &quot;丹麦&quot; }, { &quot;value&quot;: &quot;多米尼加&quot; }, { &quot;value&quot;: &quot;多米尼加共和国&quot; }, { &quot;value&quot;: &quot;毛德地&quot; }, { &quot;value&quot;: &quot;厄瓜多尔&quot; }, { &quot;value&quot;: &quot;萨尔瓦多&quot; }, { &quot;value&quot;: &quot;赤道几内亚&quot; }, { &quot;value&quot;: &quot;埃塞俄比亚&quot; }, { &quot;value&quot;: &quot;法罗&quot; }, { &quot;value&quot;: &quot;福克兰群岛&quot; }, { &quot;value&quot;: &quot;斐济&quot; }, { &quot;value&quot;: &quot;芬兰&quot; }, { &quot;value&quot;: &quot;法国&quot; }, { &quot;value&quot;: &quot;法属圭亚那&quot; }, { &quot;value&quot;: &quot;法属波利尼西亚&quot; }, { &quot;value&quot;: &quot;吉布提&quot; }, { &quot;value&quot;: &quot;加蓬&quot; }, { &quot;value&quot;: &quot;冈比亚&quot; }, { &quot;value&quot;: &quot;德意志联邦共和国&quot; }, { &quot;value&quot;: &quot;加纳&quot; }, { &quot;value&quot;: &quot;直布罗陀&quot; }, { &quot;value&quot;: &quot;基里巴斯&quot; }, { &quot;value&quot;: &quot;希腊&quot; }, { &quot;value&quot;: &quot;格陵兰&quot; }, { &quot;value&quot;: &quot;格林纳达&quot; }, { &quot;value&quot;: &quot;瓜德罗普&quot; }, { &quot;value&quot;: &quot;关岛&quot; }, { &quot;value&quot;: &quot;危地马拉&quot; }, { &quot;value&quot;: &quot;几内亚&quot; }, { &quot;value&quot;: &quot;圭亚那&quot; }, { &quot;value&quot;: &quot;海地&quot; }, { &quot;value&quot;: &quot;赫德岛&quot; }, { &quot;value&quot;: &quot;梵蒂冈&quot; }, { &quot;value&quot;: &quot;洪都拉斯&quot; }, { &quot;value&quot;: &quot;香港&quot; }, { &quot;value&quot;: &quot;匈牙利&quot; }, { &quot;value&quot;: &quot;冰岛&quot; }, { &quot;value&quot;: &quot;印度&quot; }, { &quot;value&quot;: &quot;印度尼西亚&quot; }, { &quot;value&quot;: &quot;伊朗&quot; }, { &quot;value&quot;: &quot;伊拉克&quot; }, { &quot;value&quot;: &quot;爱尔兰&quot; }, { &quot;value&quot;: &quot;巴勒斯坦&quot; }, { &quot;value&quot;: &quot;以色列&quot; }, { &quot;value&quot;: &quot;意大利&quot; }, { &quot;value&quot;: &quot;象牙海岸&quot; }, { &quot;value&quot;: &quot;牙买加&quot; }, { &quot;value&quot;: &quot;日本&quot; }, { &quot;value&quot;: &quot;约翰斯顿岛&quot; }, { &quot;value&quot;: &quot;约旦&quot; }, { &quot;value&quot;: &quot;肯尼亚&quot; }, { &quot;value&quot;: &quot;朝鲜&quot; }, { &quot;value&quot;: &quot;南朝鲜&quot; }, { &quot;value&quot;: &quot;科威持&quot; }, { &quot;value&quot;: &quot;老挝&quot; }, { &quot;value&quot;: &quot;黎巴嫩&quot; }, { &quot;value&quot;: &quot;莱索托&quot; }, { &quot;value&quot;: &quot;利比里亚&quot; }, { &quot;value&quot;: &quot;利比亚&quot; }, { &quot;value&quot;: &quot;列支敦土登&quot; }, { &quot;value&quot;: &quot;卢森堡&quot; }, { &quot;value&quot;: &quot;澳门&quot; }, { &quot;value&quot;: &quot;马达加斯加&quot; }, { &quot;value&quot;: &quot;马拉维&quot; }, { &quot;value&quot;: &quot;马来西亚&quot; }, { &quot;value&quot;: &quot;马尔代夫&quot; }, { &quot;value&quot;: &quot;马里&quot; }, { &quot;value&quot;: &quot;马耳他&quot; }, { &quot;value&quot;: &quot;马提尼克&quot; }, { &quot;value&quot;: &quot;毛里塔尼亚&quot; }, { &quot;value&quot;: &quot;毛里求斯&quot; }, { &quot;value&quot;: &quot;墨西哥&quot; }, { &quot;value&quot;: &quot;中途岛&quot; }, { &quot;value&quot;: &quot;摩纳哥&quot; }, { &quot;value&quot;: &quot;蒙古&quot; }, { &quot;value&quot;: &quot;蒙特塞拉特&quot; }, { &quot;value&quot;: &quot;摩洛哥&quot; }, { &quot;value&quot;: &quot;莫桑比克&quot; }, { &quot;value&quot;: &quot;阿曼&quot; }, { &quot;value&quot;: &quot;纳米比亚&quot; }, { &quot;value&quot;: &quot;瑙鲁&quot; }, { &quot;value&quot;: &quot;尼泊尔&quot; }, { &quot;value&quot;: &quot;荷兰&quot; }, { &quot;value&quot;: &quot;荷属安的列斯&quot; }, { &quot;value&quot;: &quot;中间地带&quot; }, { &quot;value&quot;: &quot;新喀里多尼亚&quot; }, { &quot;value&quot;: &quot;瓦努阿图&quot; }, { &quot;value&quot;: &quot;新西兰&quot; }, { &quot;value&quot;: &quot;尼加拉瓜&quot; }, { &quot;value&quot;: &quot;尼日尔&quot; }, { &quot;value&quot;: &quot;尼日利亚&quot; }, { &quot;value&quot;: &quot;纽埃岛&quot; }, { &quot;value&quot;: &quot;诺福克岛&quot; }, { &quot;value&quot;: &quot;挪威&quot; }, { &quot;value&quot;: &quot;太平洋群岛&quot; }, { &quot;value&quot;: &quot;巴基斯坦&quot; }, { &quot;value&quot;: &quot;巴拿马&quot; }, { &quot;value&quot;: &quot;巴布亚新几内亚&quot; }, { &quot;value&quot;: &quot;巴拉圭&quot; }, { &quot;value&quot;: &quot;秘鲁&quot; }, { &quot;value&quot;: &quot;菲律滨&quot; }, { &quot;value&quot;: &quot;皮特凯恩岛&quot; }, { &quot;value&quot;: &quot;波兰&quot; }, { &quot;value&quot;: &quot;葡萄牙&quot; }, { &quot;value&quot;: &quot;几内亚比绍&quot; }, { &quot;value&quot;: &quot;东帝汶&quot; }, { &quot;value&quot;: &quot;波多黎各&quot; }, { &quot;value&quot;: &quot;卡诺尔&quot; }, { &quot;value&quot;: &quot;留尼汪&quot; }, { &quot;value&quot;: &quot;罗马尼亚&quot; }, { &quot;value&quot;: &quot;卢旺达&quot; }, { &quot;value&quot;: &quot;圣赫勒拿&quot; }, { &quot;value&quot;: &quot;圣基茨-尼维斯-安圭拉&quot; }, { &quot;value&quot;: &quot;圣卢西亚&quot; }, { &quot;value&quot;: &quot;圣皮埃尔和密克隆&quot; }, { &quot;value&quot;: &quot;圣文森特和格林纳丁斯&quot; }, { &quot;value&quot;: &quot;圣马力诺&quot; }, { &quot;value&quot;: &quot;圣多美和普林西比&quot; }, { &quot;value&quot;: &quot;沙特阿拉伯&quot; }, { &quot;value&quot;: &quot;塞内加尔&quot; }, { &quot;value&quot;: &quot;塞舌尔&quot; }, { &quot;value&quot;: &quot;塞拉利昂&quot; }, { &quot;value&quot;: &quot;新加坡&quot; }, { &quot;value&quot;: &quot;越南&quot; }, { &quot;value&quot;: &quot;索马里&quot; }, { &quot;value&quot;: &quot;南非(阿札尼亚)&quot; }, { &quot;value&quot;: &quot;津巴布韦&quot; }, { &quot;value&quot;: &quot;民主也门&quot; }, { &quot;value&quot;: &quot;西班牙&quot; }, { &quot;value&quot;: &quot;西撤哈拉&quot; }, { &quot;value&quot;: &quot;苏丹&quot; }, { &quot;value&quot;: &quot;苏里南&quot; }, { &quot;value&quot;: &quot;斯瓦巴德群岛&quot; }, { &quot;value&quot;: &quot;斯威士兰&quot; }, { &quot;value&quot;: &quot;瑞典&quot; }, { &quot;value&quot;: &quot;瑞士&quot; }, { &quot;value&quot;: &quot;叙利亚&quot; }, { &quot;value&quot;: &quot;泰国&quot; }, { &quot;value&quot;: &quot;多哥&quot; }, { &quot;value&quot;: &quot;托克劳&quot; }, { &quot;value&quot;: &quot;汤加&quot; }, { &quot;value&quot;: &quot;特立尼达和多哥巴&quot; }, { &quot;value&quot;: &quot;阿拉伯联合酋长国&quot; }, { &quot;value&quot;: &quot;突尼斯&quot; }, { &quot;value&quot;: &quot;土耳其&quot; }, { &quot;value&quot;: &quot;特克斯和凯科斯群岛&quot; }, { &quot;value&quot;: &quot;图瓦卢&quot; }, { &quot;value&quot;: &quot;乌干达&quot; }, { &quot;value&quot;: &quot;乌克兰&quot; }, { &quot;value&quot;: &quot;俄罗斯(包括原苏联)&quot; }, { &quot;value&quot;: &quot;埃及&quot; }, { &quot;value&quot;: &quot;英国&quot; }, { &quot;value&quot;: &quot;坦桑尼亚&quot; }, { &quot;value&quot;: &quot;美国&quot; }, { &quot;value&quot;: &quot;美属太平洋群岛&quot; }, { &quot;value&quot;: &quot;美属维尔京群岛&quot; }, { &quot;value&quot;: &quot;上沃尔特&quot; }, { &quot;value&quot;: &quot;乌拉圭&quot; }, { &quot;value&quot;: &quot;委内瑞拉&quot; }, { &quot;value&quot;: &quot;威克岛&quot; }, { &quot;value&quot;: &quot;瓦利斯和富图纳群岛&quot; }, { &quot;value&quot;: &quot;西萨摩亚&quot; }, { &quot;value&quot;: &quot;也门&quot; }, { &quot;value&quot;: &quot;南斯拉夫&quot; }, { &quot;value&quot;: &quot;赞比亚&quot; }]</find>
+      <find>10</find>
+      <find>11.</find>
+      <find>192.</find>
+      <find>http://192.17.17.26:8088</find>
+      <find>192.17.17.26:8088</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dist/static/js/app.4f17a9f508dc5b3e73eb.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jiayinWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jiayinWeb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jiayinWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jiayinWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jiayinWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jiayinWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jiayinWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jiayinWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64e9440d-317f-4d00-b1c0-733d1e1894cb" name="Default" comment="" />
+      <created>1527668420738</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527668420738</updated>
+      <workItem from="1527668424575" duration="8067000" />
+      <workItem from="1527734538286" duration="7310000" />
+      <workItem from="1527817063194" duration="4850000" />
+      <workItem from="1527991272327" duration="1299000" />
+      <workItem from="1528082777663" duration="4266000" />
+      <workItem from="1528162607959" duration="1273000" />
+      <workItem from="1528249048786" duration="1298000" />
+      <workItem from="1528335937788" duration="1860000" />
+      <workItem from="1528429710432" duration="1543000" />
+      <workItem from="1528682160041" duration="4565000" />
+      <workItem from="1528779205077" duration="731000" />
+      <workItem from="1528879966054" duration="116000" />
+      <workItem from="1528880104334" duration="2103000" />
+      <workItem from="1528982488219" duration="3080000" />
+      <workItem from="1529026881080" duration="1727000" />
+      <workItem from="1529057834495" duration="1536000" />
+      <workItem from="1529060213734" duration="2374000" />
+      <workItem from="1529114002403" duration="4681000" />
+      <workItem from="1529372555597" duration="2686000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="55365000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2192649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32751676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="384" lean-forward="false" selection-start-line="0" selection-start-column="384" selection-end-line="0" selection-end-column="384" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/vendor.b999269ff82c3a8233b2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="5" column="28251" lean-forward="false" selection-start-line="5" selection-start-column="28251" selection-end-line="5" selection-end-column="28251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/order/order.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3933">
+          <caret line="208" column="42" lean-forward="true" selection-start-line="208" selection-start-column="42" selection-end-line="208" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/vendor.f9dffbbba5b39863cc98.js" />
+    <entry file="file://$PROJECT_DIR$/dist/static/js/app.9dadce82864502ef330a.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/country.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/order/order.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="194" column="23" lean-forward="true" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/vendor.b999269ff82c3a8233b2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="5" column="28251" lean-forward="false" selection-start-line="5" selection-start-column="28251" selection-end-line="5" selection-end-column="28251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="384" lean-forward="false" selection-start-line="0" selection-start-column="384" selection-end-line="0" selection-end-column="384" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/app.c7183d327584a0d3dc67.js" />
+    <entry file="file://$PROJECT_DIR$/dist/static/js/app.4f17a9f508dc5b3e73eb.js" />
+    <entry file="file://$PROJECT_DIR$/dist/static/js/app.07b75d89402293ae4354.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="0" column="114936" lean-forward="true" selection-start-line="0" selection-start-column="114936" selection-end-line="0" selection-end-column="114937" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/static/js/app.9f055839a5c3d9c88ab9.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="1" column="52" lean-forward="false" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,140 @@
+.register{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .register_header{
+        height: 50px;
+        line-height: 50px;
+        padding-left: 2%;
+        padding-right: 2%;
+        border-bottom: 1px dashed #cccccc;
+        p:nth-child(1){
+            float: left;
+            span{
+                font-size: 18px;
+            }
+        }
+        p:nth-child(2){
+            float: right;
+            font-size: 18px;
+            ul{
+                float: right;
+                li{
+                    float: left;    
+                    color: #000000;
+                }
+            }
+        }
+    }
+    .register_main{
+        padding-left: 2%;
+        padding-top: 1%;
+        padding-right: 2%;
+        padding-bottom: 5%;
+        flex: 1;
+        overflow-y: auto;
+        .register_top{
+            margin-bottom: 2%;
+        }
+        
+        .el-form-item{
+            margin-left: 5%;
+        }
+        .register_img{
+            width: 150px;
+            height: 380px;
+            float: left;
+            img{
+                width: 70%;
+                border: 1px solid #cccccc;
+                height: 100px;
+            }
+        }
+        .man{
+            margin-top: 3%;
+        }
+    }
+    .common{
+        margin-top: 3%;
+        .common_left{
+            width: 60%;
+            float: left;
+            padding-right: 5%;
+        }
+    }
+}
+
+.register_footer{
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    ul{
+        float: right;
+        width: 35%;
+        li{
+            // float: left;
+        }
+        li:nth-child(1){
+            padding-left: 8%;
+            float: right;   
+            margin-right: 4%;
+        }
+    }
+}
+.text {
+    font-size: 14px;
+    padding-left: 150px;
+    ul{
+        li{
+            width: 40%;
+            float: left;
+            margin-bottom: 2%;
+            margin-left: 2%;
+            height: 40px;
+            line-height: 40px;
+            label{
+                text-align: justify;
+                float: left;
+                height: 100%;
+            }
+            label:after {
+                content: "";
+                display: inline-block;
+                width: 80px;
+            }   
+            .el-input{
+                input{
+                    color: #000 !important;
+                };
+                :-moz-placeholder { /* Mozilla Firefox 4 to 18 */      
+                    color: #f00 !important;  
+                }
+                
+                ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                    color: #f00 !important;
+                }
+            }
+        }
+    }
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 480px;
+  }
+
+ 

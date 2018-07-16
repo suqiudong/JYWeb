@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1f507500-d040-40f0-aa81-6b690d54225b" name="server" url="http://192.17.17.26">
+        <fileTransfer host="192.17.17.26" port="22" rootFolder="/home/jyapp/wisdom_medical" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

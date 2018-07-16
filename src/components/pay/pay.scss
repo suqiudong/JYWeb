@@ -1,0 +1,36 @@
+.pay{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .pay_header{
+        border-bottom: 1px dashed #cccccc;
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        p:nth-child(1){
+            float: left;
+            padding-left: 5%;
+        }
+    }
+    .pay_main{
+        margin-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+        flex: 1;
+        overflow-y: auto;
+        .pay_top{
+            width: 50%;
+            margin: 0 auto;
+        }
+        .payList{
+            margin-top: 3%;
+        }
+    }
+    .pay_footer{
+        padding-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 3%;
+    }
+}

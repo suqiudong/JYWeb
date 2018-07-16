@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="server" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/static/css" local="$PROJECT_DIR$/dist/static/css" web="/" />
+            <mapping deploy="/static/img" local="$PROJECT_DIR$/dist/static/img" web="/" />
+            <mapping deploy="/static/fonts" local="$PROJECT_DIR$/dist/static/fonts" web="/" />
+            <mapping deploy="/static/js" local="$PROJECT_DIR$/dist/static/js" web="/" />
+            <mapping deploy="/static" local="$PROJECT_DIR$/dist/static" web="/" />
+            <mapping deploy="/templates" local="$PROJECT_DIR$/dist" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
