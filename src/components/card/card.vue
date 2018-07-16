@@ -330,9 +330,8 @@ export default {
                     this.codeImg_temp = res.data.msg.image_url;
                 }
                 // this.fullscreenLoading = false;
-            }).catch(function(error){
-                console.log(error)
-                console.log("服务器出错")
+            }).catch(err=>{
+                this.$message.error(err);
             })
         },
         
@@ -375,12 +374,12 @@ export default {
                     this.popshow = true;
                     this.orderBtn_m = true;
                 }else{
-                    this.$message.error('挂号失败');
+                    this.$message.error('挂号失败' + res.data.msg.error + res.data.status);
                 }
             }).catch(error=>{
                 this.loading = false;
                 console.log(error);
-                this.$message.error('服务器错误');
+                this.$message.error(error);
             })
         },
 
@@ -408,12 +407,12 @@ export default {
                     this.popshow = true;
                     this.orderBtn_w = true;
                 }else{
-                    this.$message.error('挂号失败');
+                    this.$message.error('挂号失败' + res.data.msg.error + res.data.status);
                 }
             }).catch(error=>{
                 this.loading = false;
                 console.log(error);
-                this.$message.error('服务器错误');
+                this.$message.error(error);
             })
         },
         reg_together(){
@@ -613,7 +612,7 @@ export default {
             })
             .catch(error=>{
                 console.log(error);
-                this.$message.error('服务器出错');
+                this.$message.error(error);
             });
         },
 
@@ -669,7 +668,7 @@ export default {
                 }   
             }).catch(err=>{
                 console.log(err);
-                this.$message.error('服务器出错');
+                this.$message.error(err);
             }) 
         },
 
@@ -721,7 +720,7 @@ export default {
             })
             .catch(error=>{
                 console.log(error);
-                this.$message.error('服务器出错');
+                this.$message.error(error);
             });
         },
 
@@ -768,7 +767,7 @@ export default {
                 }   
             }).catch(err=>{
                 console.log(err);
-                this.$message.error('服务器出错');
+                this.$message.error(err);
             }) 
         },
 

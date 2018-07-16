@@ -327,7 +327,7 @@ export default {
                     }
                 }).catch(err=>{
                     console.log(err);
-                    this.orderTips = "服务器出错";
+                    this.orderTips = err;
                     this.fails();
                 })
             }
@@ -489,12 +489,12 @@ export default {
                             this.remark = "挂号成功!"
                             this.centerDialogVisible = true;
                         }else{
-                            this.orderTips = "挂号失败";
+                            this.orderTips = "挂号失败" + res.data.msg.error + res.data.status;
                             this.fails();
                         }
                     }).catch(error=>{
                         console.log(error);
-                        this.orderTips = "服务器出错"+error;
+                        this.orderTips = "服务器出错"+ error;
                         this.fails();
                     })
                 }
@@ -511,21 +511,6 @@ export default {
                     }
                 })
             }, 1500);
-            // console.log(this.orderType[3])
-            // if(this.orderType[3] == true){
-            //     setTimeout(() => {
-            //         this.fullscreenLoading = false;
-            //         this.$router.push({
-            //             path: 'inquireOrder',
-            //             query: {
-            //                 treatCard: this.treatId
-            //             }
-            //         })
-            //     }, 1500);
-            // }else if(this.orderType[3] == false){
-                
-            // }
-            
         },
         backIndex(){
             this.$router.push({
