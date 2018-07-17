@@ -546,9 +546,12 @@ export default {
     mounted(){
 
         this.getOption()
+        if(localStorage.getItem("tableData") != null){
+            this.tableData = JSON.parse(localStorage.getItem("tableData"));
+            this.listNum = this.tableData.length;
+        }
 
-
-        this.tableData = JSON.parse(localStorage.getItem("tableData"));
+        
 
         // 时间选择默认时间
         var date = new Date();
@@ -581,7 +584,6 @@ export default {
             ws.onclose = function(evt) {
                 console.log("Connection closed.");
             };
-            
         if(this.$route.query.icCard){
             this.startTime = '';
             this.endTime = '';

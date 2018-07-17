@@ -96,7 +96,7 @@
                                 {{item.name}}
                             </option>
                         </select> -->
-                        <el-select v-model="roomId" clearable  v-on:change="getRoom" :disabled="roomDis" style="width:60%" filterable placeholder="==请选择==" :filterMethod="roomFilter">
+                        <el-select v-model="roomId" clearable v-on:input="getRoom_input(roomId)"  v-on:change="getRoom" :disabled="roomDis" style="width:60%" filterable placeholder="==请选择==" :filterMethod="roomFilter">
                             <el-option v-for="(item,index) in roomArr"  :key="index"  :label="item.name" :value="item.code">
                                 <span>{{item.name}}</span>
                                 <span style="float:right">{{item.pinyin}}</span>
@@ -111,7 +111,7 @@
                                 {{item.name}}
                             </option>   
                         </select> -->
-                        <el-select v-model="orderTypeNum" clearable  v-on:change="orderSelect" :disabled="registType" style="width:60%" filterable placeholder="==请选择==" :filterMethod="roomsFilter">
+                        <el-select v-model="orderTypeNum" clearable v-on:input="orderSelect_input(orderTypeNum)"  v-on:change="orderSelect" :disabled="registType" style="width:60%" filterable placeholder="==请选择==" :filterMethod="roomsFilter">
                             <el-option v-for="(item,index) in roomsArr"  :key="index"  :label="item.name" :value="item.class_type">
                                 <span>{{item.name}}</span>
                                 <span style="float:right">{{item.pinyin}}</span>
@@ -392,27 +392,54 @@ export default {
         
         // 点击挂号科室
         getRoom(){
-            // console.log(this.roomId);
-            console.log(this.roomsArr)
-            if(this.orderTypeNum != ''){
-                this.orderDoctor = [];
+            console.log(this.roomId)    
+            // if(this.orderTypeNum != ''){
+            //     this.orderDoctor = [];
+            //     this.orderDocId = "";
+            //     this.unEngenderDocDisabled = true;
+            //     this.orderTypeNum = '';
+            // }else{
                 this.orderDocId = "";
                 this.unEngenderDocDisabled = true;
-                this.orderTypeNum = '';
-                // this.registType = true;
-                // this.roomsArr = [];
-            }else{
-                this.roomDis = false;
-                console.log(this.roomItemsArr);
-                this.roomsArr = this.roomItemsArr[this.roomId].items;
-                this.roomsArr_new = this.roomItemsArr[this.roomId].items;
+
+                this.orderTypeNum = "";
+                    
+                if(this.roomId != ''){
+                    this.roomDis = false;
+                    this.roomsArr = this.roomItemsArr[this.roomId].items;
+                    this.roomsArr_new = this.roomItemsArr[this.roomId].items;
+                    this.registType = false;
+                }
+                // this.roomDis = false;
+                // this.roomsArr = this.roomItemsArr[this.roomId].items;
+                // this.roomsArr_new = this.roomItemsArr[this.roomId].items;
+                // this.registType = false;
                 console.log(this.roomsArr)
-                this.registType = false;
-            }
-            
-            
-            // console.log(this.orderTypeNum);
+            // }
         },
+
+        // 监听挂号科室输入框得值
+
+        getRoom_input(){
+            console.log(this.roomId);
+            if(this.roomId == ''){
+                this.registType = true;
+            }
+        },
+
+
+
+        // 监听挂号类别输入框得值
+        orderSelect_input(){
+            if(this.orderTypeNum == ''){
+                this.unEngenderDocDisabled = true;
+                this.orderDocId = "";
+            }
+        },
+
+
+
+
         fails() {
             this.$message.error(this.orderTips);
         },
@@ -628,21 +655,26 @@ export default {
         orderSelect(){  
             // console.log(this.roomId);
             console.log(this.orderTypeNum);
-            axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId)
-            .then(res=>{
-                console.log(res);
-                this.unEngenderDocDisabled = false;
-                if(res.data.status == 200302){
-                    this.orderDoctor = res.data.msg;
-                    this.orderDoctor_new = res.data.msg;
-                }else{
+            if(this.orderTypeNum == ''){
+                this.unEngenderDocDisabled = true;
+            }else{
+                axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId)
+                .then(res=>{
+                    console.log(res);
+                    this.unEngenderDocDisabled = false;
+                    if(res.data.status == 200302){
+                        this.orderDoctor = res.data.msg;
+                        this.orderDoctor_new = res.data.msg;
+                    }else{
+                        this.fails();
+                    }   
+                }).catch(err=>{
+                    console.log(err);
+                    this.orderTips = "服务器出错"+err;
                     this.fails();
-                }   
-            }).catch(err=>{
-                console.log(err);
-                this.orderTips = "服务器出错"+err;
-                this.fails();
-            }) 
+                }) 
+            }
+            
 
             // if(this.orderType[3] == true){
             //     this.engenderShow = true;

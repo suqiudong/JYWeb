@@ -35,7 +35,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号科室：</label>
-                            <el-select v-model="roomId_w" clearable  v-on:change="getRoom_w" :disabled="roomDis_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_w">
+                            <el-select v-model="roomId_w" clearable v-on:input="getRoom_input_w(roomId_w)"  v-on:change="getRoom_w" :disabled="roomDis_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_w">
                                 <el-option v-for="item in roomArr_w"  :key="item.name"  :label="item.name" :value="item.code">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -44,7 +44,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号类别：</label>
-                            <el-select v-model="orderTypeNum_w" clearable  v-on:change="orderSelect_w" :disabled="registType_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_w">
+                            <el-select v-model="orderTypeNum_w" clearable  v-on:input="orderSelect_input_w(orderTypeNum_w)"   v-on:change="orderSelect_w" :disabled="registType_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_w">
                                 <el-option v-for="(item,index) in roomsArr_w"  :key="index"  :label="item.name" :value="item.class_type">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -99,7 +99,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号科室：</label>
-                            <el-select v-model="roomId_m" clearable  v-on:change="getRoom_m" :disabled="roomDis_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_m">
+                            <el-select v-model="roomId_m" clearable v-on:input="getRoom_input_m(roomId_m)"  v-on:change="getRoom_m" :disabled="roomDis_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_m">
                                 <el-option v-for="item in roomArr_m"  :key="item.name"  :label="item.name" :value="item.code">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -108,7 +108,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号类别：</label>
-                            <el-select v-model="orderTypeNum_m" clearable  v-on:change="orderSelect_m" :disabled="registType_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_m">
+                            <el-select v-model="orderTypeNum_m" clearable v-on:input="orderSelect_input_m(orderTypeNum_m)"  v-on:change="orderSelect_m" :disabled="registType_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_m">
                                 <el-option v-for="(item,index) in roomsArr_m"  :key="index"  :label="item.name" :value="item.class_type">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -633,20 +633,22 @@ export default {
             //     // this.roomsArr_new_m = this.roomItemsArr_m[this.roomId_m].items;
             //     // this.registType_m = false;
             // }
-            if(this.orderTypeNum_m != ''){
+            // if(this.orderTypeNum_m != ''){
                 this.orderDoctor_m = [];
                 this.orderDocId_m = "";
                 this.unEngenderDocDisabled_m = true;
                 
                 this.orderTypeNum_m = '';
-                // this.registType = true;
-                // this.roomsArr_m = [];
-            }else{
-                this.roomDis_m = false;
-                this.roomsArr_m = this.roomItemsArr_m[this.roomId_m].items;
-                this.roomsArr_new_m = this.roomItemsArr_m[this.roomId_m].items;
-                this.registType_m = false;
-            }
+                
+            // }else{
+                if(this.roomId_m != ''){
+                    this.roomDis_m = false;
+                    this.roomsArr_m = this.roomItemsArr_m[this.roomId_m].items;
+                    this.roomsArr_new_m = this.roomItemsArr_m[this.roomId_m].items;
+                    this.registType_m = false;
+                }
+                
+            // }
         },
 
         orderSelect_m(){
@@ -656,20 +658,26 @@ export default {
             }else{
                 this.orderBtn_m = true;
             };
-            axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId_m)
-            .then(res=>{
-                console.log(res);
-                this.unEngenderDocDisabled_m = false;
-                if(res.data.status == 200302){
-                    this.orderDoctor_m = res.data.msg;
-                    this.orderDoctor_new_m = res.data.msg;
-                }else{
-                    this.$message.error('获取列表失败');
-                }   
-            }).catch(err=>{
-                console.log(err);
-                this.$message.error(err);
-            }) 
+
+            if(this.orderTypeNum_m == ''){
+                this.unEngenderDocDisabled_m = true;
+            }else{
+                axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId_m)
+                .then(res=>{
+                    console.log(res);
+                    this.unEngenderDocDisabled_m = false;
+                    if(res.data.status == 200302){
+                        this.orderDoctor_m = res.data.msg;
+                        this.orderDoctor_new_m = res.data.msg;
+                    }else{
+                        this.$message.error('获取列表失败');
+                    }   
+                }).catch(err=>{
+                    console.log(err);
+                    this.$message.error(err);
+                })
+            }
+             
         },
 
         orderDocSelect_m(){
@@ -686,6 +694,44 @@ export default {
                 }
             }
         },
+
+
+
+        // 监听挂号科室输入框得值
+        getRoom_input_m(){
+            if(this.roomId_m == ''){
+                this.registType_m = true;
+            }
+        },
+
+        getRoom_input_w(){
+            if(this.roomId_w == ''){
+                this.registType_w = true;
+            }
+        },
+
+
+        orderSelect_input_m(){
+            if(this.orderTypeNum_m == ''){
+                this.unEngenderDocDisabled_m = true;
+                this.orderDocId_m = "";
+            }
+        },
+        orderSelect_input_w(){
+            if(this.orderTypeNum_w == ''){
+                this.unEngenderDocDisabled_w = true;
+                this.orderDocId_w = "";
+            }
+        },
+
+
+
+
+
+
+
+
+
 
 
 
@@ -731,21 +777,21 @@ export default {
             }else{
                 this.orderBtn_w = true;
             };
-            if(this.orderTypeNum_w != ''){
+            // if(this.orderTypeNum_w != ''){
                 this.orderDoctor_w = [];
                 this.orderDocId_w = "";
                 this.unEngenderDocDisabled_w = true;
                 
                 this.orderTypeNum_w = '';
-                // this.registType = true;
-                // this.roomsArr_w = [];
-            }else{
-                this.roomDis_w = false;
-                this.roomsArr_w = this.roomItemsArr_w[this.roomId_w].items;
-                this.roomsArr_new_w = this.roomItemsArr_w[this.roomId_w].items;
-                // console.log(this.roomsArr)
-                this.registType_w = false;
-            }
+            // }else{
+                if(this.roomId_w != ''){
+                    this.roomDis_w = false;
+                    this.roomsArr_w = this.roomItemsArr_w[this.roomId_w].items;
+                    this.roomsArr_new_w = this.roomItemsArr_w[this.roomId_w].items;
+                    this.registType_w = false;
+                }
+                
+            // }
         },
 
         orderSelect_w(){
@@ -755,20 +801,25 @@ export default {
             }else{
                 this.orderBtn_w = true;
             };
-            axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId_w)
-            .then(res=>{
-                console.log(res);
-                this.unEngenderDocDisabled_w = false;
-                if(res.data.status == 200302){
-                    this.orderDoctor_w = res.data.msg;
-                    this.orderDoctor_new_w = res.data.msg;
-                }else{
-                    this.$message.error('获取列表失败');
-                }   
-            }).catch(err=>{
-                console.log(err);
-                this.$message.error(err);
-            }) 
+
+            if(this.orderTypeNum_w == ''){
+                this.unEngenderDocDisabled_w = true;
+            }else{
+                axios.get(baseUrl + 'api/mq/depart_doctor?depart_code=' + this.roomId_w)
+                .then(res=>{
+                    console.log(res);
+                    this.unEngenderDocDisabled_w = false;
+                    if(res.data.status == 200302){
+                        this.orderDoctor_w = res.data.msg;
+                        this.orderDoctor_new_w = res.data.msg;
+                    }else{
+                        this.$message.error('获取列表失败');
+                    }   
+                }).catch(err=>{
+                    console.log(err);
+                    this.$message.error(err);
+                }) 
+            }
         },
 
         orderDocSelect_w(){
