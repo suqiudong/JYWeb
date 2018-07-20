@@ -240,17 +240,22 @@ export default {
         ws.onclose = function(evt) {
             console.log("Connection closed.");
         };
-
-        if(localStorage.getItem("inquireOrderInput") != ""){
-            // this.tableData = JSON.parse(localStorage.getItem("inquireOrderData"));
-            this.inputMsg = JSON.parse(localStorage.getItem("inquireOrderInput"));
-            this.inquireOrderBtn();
-        };
+        // console.log(localStorage.getItem("inquireOrderData"))
+        // if(localStorage.getItem("inquireOrderInput") != ""){
+            // if(localStorage.getItem("inquireOrderInput") != "null"){
+            //     this.tableData = localStorage.getItem("inquireOrderData");
+            // }
+        
+        //     this.inputMsg = JSON.parse(localStorage.getItem("inquireOrderInput"));
+        //     console.log(123)
+        //     this.inquireOrderBtn();
+        // };
 
         // 
         if(this.$route.query.treatCard != undefined && this.$route.query.treatCard != ''){
             this.inputMsg = this.$route.query.treatCard;
             this.inquireOrderBtn();
+            console.log(456)
         }
     }
     

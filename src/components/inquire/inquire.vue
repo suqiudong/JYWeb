@@ -89,7 +89,9 @@
                     </ul>
                 </div>
                 <div class="clear" style="padding-left:18%">
-                    <el-table height="550" :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)">
+                    <el-table height="550" stripe :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)">
+                       
+                            
                     <el-table-column prop="PAT_NAME" label="姓名" width="150">
                     </el-table-column>
                     <el-table-column prop="AGE" label="年龄" width="60">
@@ -115,7 +117,8 @@
                     <el-table-column label="操作">
                         <template slot-scope="scope">
                             <el-dropdown size="medium" split-button type="warning">
-                                操作
+                                <span style="width:100%;height:100%;" @click="handleEdit(scope.$index, scope.row)">操作</span>
+                                           
                                 <el-dropdown-menu slot="dropdown">
                                     <el-dropdown-item >
                                         <el-button size="small" style="border: 0 none;width:100%" @click="handleEdit(scope.$index, scope.row)">修改</el-button>
@@ -139,6 +142,8 @@
                             </el-dropdown>
                         </template>
                     </el-table-column>
+                     
+                    
                 </el-table>
                 </div>
                 
@@ -350,8 +355,7 @@ export default {
         },
 
         // 修改
-        handleEdit(index, row) {
-            // console.log(index, row);
+        handleEdit($event, row) {
             console.log(row);
             var data = JSON.stringify(row);
             this.$router.push({
@@ -359,26 +363,6 @@ export default {
                 query: {
                     data: data
                 }
-                // {
-                    // icCard: row.CARD_ID_NUMBER,
-                    // name: row.PAT_NAME,
-                    // age: row.AGE,
-                    // idCard: row.ID_NUMBER,
-                    // phone: row.PHONE_NO,
-                    // sex: row.PHYSI_SEX_NAME,
-                    // country: row.NATION_NAME,
-                    // marry: row.MARITAL_STATUS_NAME,
-                    // birthday: row.DATE_BIRTH,
-                    // nation: row.ETHNIC_NAME,
-                    // address: row.CURR_ADDR,
-                    // area: row.ADDR,
-                    // job: row.OCCUPATION_CATEG_NAME,
-                    // service: row.BANK,
-                    // fkPerson: row.OPPERATER,
-                    // orderNum: row.WORK_UNITS,
-                    // createTime: row.REGIST_DATE,
-                    // fkPersonNum: row.OPERATOR_CODE
-                // }
             })
         },
         

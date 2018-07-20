@@ -378,7 +378,7 @@
                 age_w: '',
                 homeTown_w: '',//户口地址
                 address_w: '',
-                place_w: '乌鲁木齐',
+                place_w: '',
                 marry_w: '已婚',
                 job_w: '个体经营者',
                 phone_w: '',
@@ -403,7 +403,7 @@
                 age_m: '',
                 homeTown_m: '',//户口地址
                 address_m: '',
-                place_m: '乌鲁木齐',
+                place_m: '',
                 marry_m: '已婚',
                 job_m: '个体经营者',
                 phone_m: '',
@@ -432,9 +432,9 @@
                 hospitalArr_new: [],//机构列表
                 hospitalIndex: '',//机构编码
                 hospitalNum: '',//再次赋值的机构编码
-                sexArr_m: [{name: "N",value: "男"},{name: "N",value: "女"}],//性别
+                sexArr_m: [{name: "N",value: "男"}],//性别
                 sexArr_new_m: [],//性别
-                sexArr_w: [{name: "N",value: "男"},{name: "N",value: "女"}],//性别
+                sexArr_w: [{name: "N",value: "女"}],//性别
                 sexArr_new_w: [],//性别
                 countryArr: country,//国籍
                 countryArr_new: country,//国籍
