@@ -47,7 +47,7 @@
                             </el-option>
                         </el-select>
                     </li>
-                    <li style="width:18%;float:right">
+                    <li style="width:14%;float:right">
                         <el-button type="warning" @click="getPrevUserMsg" v-loading.fullscreen.lock="loading">最近一条</el-button>
                     </li>
                 </ul>
@@ -1223,31 +1223,24 @@
                     });
                     this.loading = true;
                     // console.log(data)
-                    axios.post(baseUrl +'api/his/create_patient', data)
+                    axios.post(baseUrl +'api/his/bind_patient', data)
                     .then(res=>{
                         console.log(res);
                         this.loading = false;
-                        if(res.data.status == 200202){
+                        if(res.data.status == 200200){
                             this.subMsgHis = true;
                             this.healthCard = false;
                             this.icCard_m = res.data.msg.visit_card_m;
                             this.icCard_w = res.data.msg.visit_card_w;
                             this.$message({
-                                message: '提交成功',
+                                message: '补录成功',
                                 type: 'success'
                             });
-
-                        }else if(res.data.status == 400201){
-                            this.tips = res.data.status + " " + res.data.desc;
-                            this.tipsPop = true;
-                        }else if(res.data.status == 400400){
-                            this.tips = res.data.status + " " + res.data.desc;
-                            this.tipsPop = true;
                         }else if(res.data.status == 400003){
                             this.tips = "参数错误" + res.data.status + " " + res.data.desc;
                             this.tipsPop = true;
-                        }else{
-                            this.tips = "服务器错误" + res.data.status + " " + res.data.desc;
+                        }else {
+                            this.tips = res.data.status + " " + res.data.desc;
                             this.tipsPop = true;
                         }
                     }).catch(err=>{

@@ -5,7 +5,29 @@
                 <span>{{msg}}</span>
             </p>
         </div>
+        <div class="card_main_top">
+            <h1  style="float:left;height:40px;width:30%;margin-left:4%;position:relative;margin-bottom:5px">
+                <span style="width:40px;height:40px;border: 1px solid #666;display:inline-block;border-radius: 50%;
+                font-size:14px;text-align:center;position:absolute;left:0;top:0;line-height:40px;background-color:#e6a23c;">1</span>
+                <span style="color:#ccc;height:40px;line-height:40px;position:absolute;left:40px;top:0;">———</span>
+                <span style="width:40px;height:40px;border: 1px solid #666;display:inline-block;border-radius: 50%;
+                font-size:14px;text-align:center;position:absolute;left:144px;top:0;line-height:40px;background-color:#e6a23c;">2</span>
+                <span style="font-size:16px; color:#999;position:absolute;left:194px;top:50%;transform: translate(0%,-50%)">执行用户挂号</span>
+            </h1>
+                <!-- <h1 style="float:left;height:50px;width:30%;padding-left:4%">
+                    <span style="width:40px;height:40px;border-radius:50%;
+                    background-color:#e6a23c;display:inline-block;
+                    font-size:14px;text-align:center;line-height:40px;border:1px solid #666">1</span>
+                    <span style="color:#ccc;height:50px;line-height:50px;">———</span>
+                    <span style="width:40px;height:40px;border-radius:50%;
+                    background-color:#e6a23c;display:inline-block;
+                    font-size:14px;text-align:center;line-height:40px;border:1px solid #666">2</span>
+                    <span style="font-size:16px; color:#999;">执行用户挂号</span>
+                </h1> -->
+        </div>
         <div class="card_main">
+            
+            
             <ul class="clear">
                 <li v-show="womenShow">
                     <span style="position:absolute;left:0;top:0;">女方信息</span>
@@ -26,7 +48,7 @@
                     <div class="order">
                         <h5>
                             <label for="" style="width:70px">挂号机构：</label>
-                            <el-select v-model="hospitalIndex_w" v-on:change="getSubject_w" clearable style="width:70%" filterable placeholder="==请选择==" :filterMethod="hospitalFilter_w">
+                            <el-select v-model="hospitalIndex_w" v-on:change="getSubject_w" clearable style="width:80%" filterable placeholder="==请选择==" :filterMethod="hospitalFilter_w">
                                 <el-option v-for="item in hospitalArr"  :key="item.hospitalName"  :label="item.hospitalName" :value="item.hospitalNo">
                                     <span>{{item.hospitalName}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -35,7 +57,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号科室：</label>
-                            <el-select v-model="roomId_w" clearable v-on:input="getRoom_input_w(roomId_w)"  v-on:change="getRoom_w" :disabled="roomDis_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_w">
+                            <el-select v-model="roomId_w" clearable v-on:input="getRoom_input_w(roomId_w)"  v-on:change="getRoom_w" :disabled="roomDis_w" style="width:80%" filterable placeholder="==请选择==" :filterMethod="roomFilter_w">
                                 <el-option v-for="item in roomArr_w"  :key="item.name"  :label="item.name" :value="item.code">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -44,7 +66,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号类别：</label>
-                            <el-select v-model="orderTypeNum_w" clearable  v-on:input="orderSelect_input_w(orderTypeNum_w)"   v-on:change="orderSelect_w" :disabled="registType_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_w">
+                            <el-select v-model="orderTypeNum_w" clearable  v-on:input="orderSelect_input_w(orderTypeNum_w)"   v-on:change="orderSelect_w" :disabled="registType_w" style="width:80%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_w">
                                 <el-option v-for="(item,index) in roomsArr_w"  :key="index"  :label="item.name" :value="item.class_type">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -53,7 +75,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号医生：</label>
-                            <el-select v-model="orderDocId_w" clearable  v-on:change="orderDocSelect_w" :disabled="unEngenderDocDisabled_w" style="width:70%" filterable placeholder="==请选择==" :filterMethod="docFilter_w">
+                            <el-select v-model="orderDocId_w" clearable  v-on:change="orderDocSelect_w" :disabled="unEngenderDocDisabled_w" style="width:80%" filterable placeholder="==请选择==" :filterMethod="docFilter_w">
                                 <el-option v-for="item in orderDoctor_w"  :key="item.STAFF_NAME"  :label="item.STAFF_NAME" :value="item.STAFF_INDEX_NO">
                                     <span>{{item.STAFF_NAME}}</span>
                                     <span style="float:right">{{item.PINYIN_CODE}}</span>
@@ -62,13 +84,13 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号来源：</label>
-                            <el-autocomplete class="inline-input" clearable style="width:70%" v-model="source_w" :fetch-suggestions="querySearch_w" placeholder="请输入内容" @select="handleSelect_w" >
+                            <el-autocomplete class="inline-input" clearable style="width:80%" v-model="source_w" :fetch-suggestions="querySearch_w" placeholder="请输入内容" @select="handleSelect_w" >
                             </el-autocomplete>
                         </h5>
                         <h5>
                             <el-checkbox v-model="checked_w">购买病历</el-checkbox>
                         </h5>
-                        <el-button style="position:absolute;right:-18%;bottom:-20%;" v-loading.fullscreen.lock="loading"  v-bind:disabled="orderBtn_w" type="warning" @click="reg_w">立即挂号</el-button>
+                        <el-button style="position:absolute;right:0%;bottom:-15%;" v-loading.fullscreen.lock="loading"  v-bind:disabled="orderBtn_w" type="warning" @click="reg_w">立即挂号</el-button>
                     </div>
                 </li>
                 <li v-show="manShow">
@@ -90,7 +112,7 @@
                     <div class="order">
                         <h5>
                             <label for="" style="width:70px">挂号机构：</label>
-                            <el-select v-model="hospitalIndex_m" v-on:change="getSubject_m" clearable style="width:70%" filterable placeholder="==请选择==" :filterMethod="hospitalFilter_m">
+                            <el-select v-model="hospitalIndex_m" v-on:change="getSubject_m" clearable style="width:80%" filterable placeholder="==请选择==" :filterMethod="hospitalFilter_m">
                                 <el-option v-for="item in hospitalArr"  :key="item.hospitalName"  :label="item.hospitalName" :value="item.hospitalNo">
                                     <span>{{item.hospitalName}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -99,7 +121,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号科室：</label>
-                            <el-select v-model="roomId_m" clearable v-on:input="getRoom_input_m(roomId_m)"  v-on:change="getRoom_m" :disabled="roomDis_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomFilter_m">
+                            <el-select v-model="roomId_m" clearable v-on:input="getRoom_input_m(roomId_m)"  v-on:change="getRoom_m" :disabled="roomDis_m" style="width:80%" filterable placeholder="==请选择==" :filterMethod="roomFilter_m">
                                 <el-option v-for="item in roomArr_m"  :key="item.name"  :label="item.name" :value="item.code">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -108,7 +130,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号类别：</label>
-                            <el-select v-model="orderTypeNum_m" clearable v-on:input="orderSelect_input_m(orderTypeNum_m)"  v-on:change="orderSelect_m" :disabled="registType_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_m">
+                            <el-select v-model="orderTypeNum_m" clearable v-on:input="orderSelect_input_m(orderTypeNum_m)"  v-on:change="orderSelect_m" :disabled="registType_m" style="width:80%" filterable placeholder="==请选择==" :filterMethod="roomsFilter_m">
                                 <el-option v-for="(item,index) in roomsArr_m"  :key="index"  :label="item.name" :value="item.class_type">
                                     <span>{{item.name}}</span>
                                     <span style="float:right">{{item.pinyin}}</span>
@@ -117,7 +139,7 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号医生：</label>
-                            <el-select v-model="orderDocId_m" clearable  v-on:change="orderDocSelect_m" :disabled="unEngenderDocDisabled_m" style="width:70%" filterable placeholder="==请选择==" :filterMethod="docFilter_m">
+                            <el-select v-model="orderDocId_m" clearable  v-on:change="orderDocSelect_m" :disabled="unEngenderDocDisabled_m" style="width:80%" filterable placeholder="==请选择==" :filterMethod="docFilter_m">
                                 <el-option v-for="item in orderDoctor_m"  :key="item.STAFF_NAME"  :label="item.STAFF_NAME" :value="item.STAFF_INDEX_NO">
                                     <span>{{item.STAFF_NAME}}</span>
                                     <span style="float:right">{{item.PINYIN_CODE}}</span>
@@ -126,13 +148,13 @@
                         </h5>
                         <h5>
                             <label for="" style="width:70px">挂号来源：</label>
-                            <el-autocomplete class="inline-input" clearable style="width:70%" v-model="source_m" :fetch-suggestions="querySearch_m" placeholder="请输入内容" @select="handleSelect_m" >
+                            <el-autocomplete class="inline-input" clearable style="width:80%" v-model="source_m" :fetch-suggestions="querySearch_m" placeholder="请输入内容" @select="handleSelect_m" >
                             </el-autocomplete>
                         </h5>
                         <h5>
                             <el-checkbox v-model="checked_m">购买病历</el-checkbox>
                         </h5>
-                        <el-button style="position:absolute;right:-18%;bottom:-20%;" v-loading.fullscreen.lock="loading"  v-bind:disabled="orderBtn_m" type="warning" @click="reg_m">立即挂号</el-button>
+                        <el-button style="position:absolute;right:0%;bottom:-15%;" v-loading.fullscreen.lock="loading"  v-bind:disabled="orderBtn_m" type="warning" @click="reg_m">立即挂号</el-button>
                     </div>
                 </li>
             </ul>
@@ -180,7 +202,7 @@ import baseUrl from '../base/baseUrl';
 export default {
     data(){
         return{
-            msg: '电子健康卡',
+            msg: '初诊登记',
             hospital: '',
             name_m: '',
             nation_m:'',
@@ -370,7 +392,7 @@ export default {
                         message: '挂号成功',
                         type: 'success'
                     });
-                    this.remark = "挂号成功!"
+                    this.remark = "挂号成功!";
                     this.popshow = true;
                     this.orderBtn_m = true;
                 }else{

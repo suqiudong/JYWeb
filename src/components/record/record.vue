@@ -157,7 +157,7 @@
         </div>
         <div class="record_footer">
             <!-- <div class="block" > -->
-                <el-pagination  style="margin:0 auto;margin-top:3%;line-height:40px;height:40px;width:35%;position:absolute;left:50%;top:0;transform: translate(-50%,0)" @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage3" 
+                <el-pagination  style="margin:0 auto;line-height:33px;height:33px;width:35%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%)" @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage3" 
                 :page-sizes="[10, 20]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" 
                 :total='Number(listNum)'>
                 </el-pagination>

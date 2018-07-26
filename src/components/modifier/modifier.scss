@@ -1,45 +1,45 @@
-.modifier{
+.modifier {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     min-width: 1230px;
-    .modifier_header{
+    .modifier_header {
         height: 50px;
         line-height: 50px;
         border-bottom: 1px dashed #cccccc;
         font-size: 18px;
-        padding-right: 2%;
-        p:nth-child(1){
+        padding-right: 12%;
+        p:nth-child(1) {
             float: left;
             padding-left: 2%;
             width: 200px;
         }
-        p:nth-child(2){
+        p:nth-child(2) {
             float: right;
             font-size: 18px;
-            ul{
+            ul {
                 float: right;
-                li{
-                    float: left;    
+                li {
+                    float: left;
                     color: #000000;
                 }
             }
         }
     }
-    .modifier_main{
+    .modifier_main {
         flex: 1;
         overflow-y: auto;
         // padding-top: 1%;
         padding-left: 2%;
         padding-right: 2%;
         // padding-bottom: 3%;
-        .main_top{
-            ul{
+        .main_top {
+            ul {
                 float: right;
                 width: 30%;
-                // padding-right: 2%;
-                li{
+                padding-right: 10%;
+                li {
                     float: right;
                     width: 50%;
                     margin-bottom: 8px;
@@ -47,7 +47,7 @@
                     margin-top: 2%;
                     height: 40px;
                     line-height: 40px;
-                    label{
+                    label {
                         text-align: justify;
                         float: left;
                         height: 100%;
@@ -57,43 +57,44 @@
                         content: "";
                         display: inline-block;
                         width: 80px;
-                    }   
-                    .el-select{
+                    }
+                    .el-select {
                         width: 65%;
                     }
                 }
-                li:nth-child(2){
-                    .el-select{
+                li:nth-child(2) {
+                    .el-select {
                         width: 100%;
                     }
                 }
             }
         }
-        .mian_msg{
+        .mian_msg {
             width: 60%;
             float: left;
-            margin-right: 20px;
+            // margin-right: 20px;
             padding-right: 20px;
             // background: #ccc;
-            h1{
+            h1 {
                 font-size: 18px;
-                span:nth-child(2){
+                span:nth-child(2) {
                     font-size: 14px;
                     float: right;
                     margin-right: 5%;
                 }
             }
-            .main_msg_left{
+            .main_msg_left {
                 width: 120px;
                 height: 100%;
                 float: left;
                 margin-top: 2%;
-            };
-            ul{
+            }
+            ;
+            ul {
                 width: 100%;
                 padding-left: 120px;
                 margin-top: 2%;
-                li{
+                li {
                     width: 48%;
                     float: left;
                     margin-bottom: 8px;
@@ -101,7 +102,7 @@
                     height: 40px;
                     line-height: 40px;
                     font-size: 14px;
-                    label{
+                    label {
                         text-align: justify;
                         float: left;
                         height: 100%;
@@ -111,31 +112,31 @@
                         content: "";
                         display: inline-block;
                         width: 80px;
-                    } 
-                    .el-input{
+                    }
+                    .el-input {
                         width: 64%;
                     }
                 }
             }
         }
-        .main_right{
+        .main_right {
             width: 30%;
             float: left;
             // background: #ccc;
-            h1{
+            h1 {
                 font-size: 18px;
             }
-            ul{
+            ul {
                 width: 100%;
                 margin-top: 2%;
-                li{
+                li {
                     margin-bottom: 8px;
                     margin-left: 2%;
-                    padding-right: 2%;
+                    // padding-right: 2%;
                     height: 40px;
                     line-height: 40px;
                     font-size: 14px;
-                    label{
+                    label {
                         text-align: justify;
                         float: left;
                         height: 100%;
@@ -145,15 +146,16 @@
                         content: "";
                         display: inline-block;
                         width: 80px;
-                    } 
-                    .el-input{
-                        width: 79%;
+                    }
+                    .el-input {
+                        width: 83%;
                     }
                 }
             }
         }
     }
-    .modifier_footer{
+    .modifier_footer {
         padding: 1.5%;
+        padding-right: 10%;
     }
 }

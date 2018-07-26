@@ -242,7 +242,7 @@
             </span>
         </el-dialog>
 
-        <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" >
+        <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :close-on-click-modal="false" :close-on-press-escape="true" >
             <span>请确认以上信息无误</span>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogVisible = false">取 消</el-button>
@@ -482,6 +482,7 @@ export default {
                             this.gztMsg = "国政通校验成功";
                             this.gztShow_m = true;
                             this.bgcolor_m = "blue";
+                            this.gztResult = true;
                         }
                     }else if(this.idCard != res.data.msg.id_number){
                         this.gztTips = "身份证与用户信息不匹配";
@@ -538,6 +539,7 @@ export default {
                                     this.gztMsg = "国政通校验成功";
                                     this.gztShow_m = true;
                                     this.bgcolor_m = "blue";
+                                    this.gztResult = true;
                                 }
                             }else if(this.idCard != res.data.msg.id_number){
                                 this.gztTips = "身份证与用户信息不匹配";
@@ -831,6 +833,16 @@ export default {
                 this.tipsPop = true; 
             }else{
                 this.dialogVisible = true;
+                // this.$alert('这是一段内容', '标题名称', {
+                //     confirmButtonText: '确定',
+                //     showCancelButton: true,
+                //     callback: action => {
+                //         this.$message({
+                //         type: 'warning',
+                //         message: `action: ${ action }`
+                //         });
+                //     }
+                // });
             };
             // "id_face_image": this.userFaceImg,
                 // "scene_face_image": this.userSceneImg,
@@ -934,6 +946,7 @@ export default {
         // 电子卡
         healthCard(){
             console.log(this.newGzt);
+            console.log(this.gztResult);
             if(this.newGzt== -1){
                 this.gztTips = "未检测到有效人脸，请重新拍照";
                 this.gztPop = true;

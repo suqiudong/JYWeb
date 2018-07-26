@@ -10,7 +10,7 @@
                     <li>
                         <el-input placeholder="请输入设备编号" v-on:blur="bulrDevice" v-model="deviceInput" v-bind:disabled="deviceNum"></el-input>
                     </li>
-                    <li style="margin-left:10px">
+                    <li style="margin-left:10px;">
                         <el-button @click="editDevice">编辑</el-button>
                     </li>
                 </ul>
@@ -26,7 +26,7 @@
                     <span style="width:40px;height:40px;border-radius:50%;
                     background-color:#ccc;display:inline-block;
                     font-size:14px;text-align:center;line-height:40px;border:1px solid #666">2</span>
-                    <span style="font-size:16px; color:#999;">初诊登记</span>
+                    <span style="font-size:16px; color:#999;">填入用户信息</span>
                 </h1>
                 <ul>
                     <li>
@@ -47,7 +47,7 @@
                             </el-option>
                         </el-select>
                     </li>
-                    <li style="width:18%;float:right">
+                    <li style="width:14%;float:right">
                         <el-button type="warning" @click="getPrevUserMsg" v-loading.fullscreen.lock="loading">最近一条</el-button>
                     </li>
                 </ul>

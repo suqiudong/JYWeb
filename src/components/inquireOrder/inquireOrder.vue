@@ -64,7 +64,7 @@
         </div>
         <div class="inquireOrder_footer">
              <!-- <div class="block" style="margin-top:3%"> -->
-                <el-pagination @size-change="handleSizeChange" style="margin:0 auto;margin-top:3%;width:35%;position:absolute;left:50%;top:0;transform: translate(-50%,0)" @current-change="handleCurrentChange" :current-page="currentPage3" 
+                <el-pagination @size-change="handleSizeChange" style="margin:0 auto;width:35%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%)" @current-change="handleCurrentChange" :current-page="currentPage3" 
                 :page-sizes="[10, 20]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" 
                 :total='Number(listNum)'>
                 </el-pagination>

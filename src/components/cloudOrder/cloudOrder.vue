@@ -216,7 +216,8 @@ export default {
       centerDialogVisible: false,
 
       hospitalNum: "",
-      hospitalIndex: ""
+      hospitalIndex: "",
+      tempTime: '',
     };
   },
   methods: {
@@ -432,7 +433,7 @@ export default {
         this.tipsMsg = "请先输入用户信息";
         this.popshow = true;
       } else {
-        console.log(this.timeId);
+        console.log(this.tempTime); 
         this.fullscreenLoading = true;
         axios
           .post(
