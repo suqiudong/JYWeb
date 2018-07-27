@@ -517,7 +517,7 @@ export default {
                         background: 'rgba(255, 255, 255, 1)',
                         customClass: 'loadingFontSize'
                     });
-                    axios.get(baseUrl + "api/sensetime/data/" + this.deviceInput + "/" + this.deviceMsgArr[0].id)
+                    axios.get(baseUrl + "api/sensetime/data/" + this.deviceInput)
                     .then(res=>{
                         console.log(res);
                         loading.close();

@@ -277,6 +277,7 @@ export default {
       //     "phone": this.phone,
       //     "id_number": this.idCard,register_list
       // axios.get(baseUrl + "api/mq/register_record?keyword=" + this.inputMsg + "&start_date=" + this.value6 + "&end_date=" + this.value6)
+      console.log(this.option,"请求前操作员")
       if (this.status == "3") {
         axios
           .post(
@@ -338,6 +339,7 @@ export default {
             this.errPop = true;
           });
       } else {
+        console.log(this.option,"请求时操作员")
         axios
           .post(
             baseUrl + "api/mq/register_list",
@@ -382,7 +384,7 @@ export default {
                 } else if (this.tableData[i].EXECUTE_STATE == 2) {
                   this.tableData[i].EXECUTE_STATE = "正在就诊";
                 } else {
-                  this.tableData[i].EXECUTE_STATE = "不就诊";
+                  this.tableData[i].EXECUTE_STATE = "取消就诊";
                 }
               }
             } else {
@@ -525,7 +527,6 @@ export default {
             this.dialogVisible = false;
             this.cancelSuccess();
             this.recordBtn();
-            this.recordBtn();
           } else {
             this.errTips = "操作失败";
             this.falis();
@@ -625,10 +626,7 @@ export default {
     this.startTime = year + "-" + month + "-" + day + " " + "00:00:00";
     this.endTime = year + "-" + month + "-" + day + " " + "23:59:59";
     // console.log(this.startTime);
-    if (this.$route.query.icCard != "") {
-      this.icCard = this.$route.query.icCard;
-      this.recordBtn();
-    }
+    
 
     // 获取医院列表
     this.getHospital();
@@ -670,7 +668,11 @@ export default {
     var url = window.location.href;
     this.opName = UrlSearch(url, "opName");
     this.opNo = UrlSearch(url, "opNo");
-    console.log(this.opName);
+    this.option = UrlSearch(url, "opNo");
+    if (this.$route.query.icCard != "undefined") {
+      this.icCard = this.$route.query.icCard;
+      this.recordBtn();
+    }
   }
 };
 </script>

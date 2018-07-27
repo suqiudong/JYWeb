@@ -551,7 +551,26 @@ export default {
 
 
 
+         function UrlSearch(path, param) {
+                var name;
+                var str = decodeURI(path); //取得整个地址栏
+                var num = str.indexOf("?")
+                str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+                var arr = str.split("&"); //各个参数放到数组里
+                for(var i=0;i < arr.length;i++){
+                    num=arr[i].indexOf("=");
+                    if(num>0){
+                        name = arr[i].substring(0,num);
+                        if (name === param) {
+                            return arr[i].substr(num+1);
+                        }
+                        continue;
+                    }
+                }
+            };
 
+            var url = window.location.href;
+            this.option = UrlSearch(url, 'opNo');
 
         this.listNum = this.tableData.length;
         var ws = new WebSocket("ws://127.0.0.1:8804");
@@ -568,12 +587,13 @@ export default {
             ws.onclose = function(evt) {
                 console.log("Connection closed.");
             };
-        if(this.$route.query.icCard){
+        if(this.$route.query.icCard != undefined){
             this.startTime = '';
             this.endTime = '';
             this.usericCard = this.$route.query.icCard;
             this.inquireBtn();
-        }
+        };
+        this.inquireBtn();
         
     }
 }
