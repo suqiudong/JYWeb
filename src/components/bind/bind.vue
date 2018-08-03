@@ -1707,9 +1707,9 @@
                     this.name_w = data.PAT_NAME;
                     this.sex_w = data.PHYSI_SEX_NAME;
                     this.idCard_w = data.ID_NUMBER;
-                    this.country_w = data.ETHNIC_NAME;
+                    this.country_w = data.NATION_NAME;
                     this.birthday_w = (data.DATE_BIRTH).slice(0,10);
-                    this.nation_w = data.NATION_NAME;
+                    this.nation_w = data.ETHNIC_NAME;
                     this.age_w = year - (data.DATE_BIRTH).slice(0,4);
                     this.homeTown_w = data.HUKOU_ADDR;
                     this.place_w = data.ADDR;
