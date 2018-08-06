@@ -3,13 +3,13 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    min-width: 1230px;
+    min-width: 1260px;
     .modifier_header {
         height: 50px;
         line-height: 50px;
         border-bottom: 1px dashed #cccccc;
         font-size: 18px;
-        padding-right: 12%;
+        padding-right: 13%;
         p:nth-child(1) {
             float: left;
             padding-left: 2%;
@@ -37,8 +37,8 @@
         .main_top {
             ul {
                 float: right;
-                width: 30%;
-                padding-right: 10%;
+                width: 33%;
+                padding-right: 10.5%;
                 li {
                     float: right;
                     width: 50%;
@@ -148,7 +148,7 @@
                         width: 80px;
                     }
                     .el-input {
-                        width: 83%;
+                        width: 80%;
                     }
                 }
             }

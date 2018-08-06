@@ -197,421 +197,431 @@
     </div>
 </template>
 <script>
-import baseUrl from '../base/baseUrl.js';
-import axios from 'axios';
+import baseUrl from "../base/baseUrl.js";
+import axios from "axios";
 export default {
-    data(){
-        return{
-            msg: '用户查询',
-            inputMsg: '',
-            currentPage3: 1,
-            listNum:'',
-            tableData: [],
-            optionArr: [],//操作员
-            optionArr_new: [],
-            option: "",
-            total:0,//默认数据总数
-            pagesize:10,//每页的数据条数
-            currentPage: 1,//默认开始页面
-            centerDialogVisible: false,//二维码弹窗控制
-            codeImg_long: '',
-            codeImg_temp:'',
-            codeImg_temp_show: true,
-            addShow: false,
-            name: '',
-            sex: '',
-            health_card: '',
-            // sexArr: ["男","女"],
-            sexArr: [{name: "N",value:"男"},{name: "N",value:"女"}],//性别下拉
-            sexArr_new: [{name: "N",value:"男"},{name: "N",value:"女"}],
-            // ARR: [{OPERATOR_CODE: "Q",value: "12a3"},{OPERATOR_CODE: "W",value: "456"}],
+  data() {
+    return {
+      msg: "用户查询",
+      inputMsg: "",
+      currentPage3: 1,
+      listNum: "",
+      tableData: [],
+      optionArr: [], //操作员
+      optionArr_new: [],
+      option: "",
+      total: 0, //默认数据总数
+      pagesize: 10, //每页的数据条数
+      currentPage: 1, //默认开始页面
+      centerDialogVisible: false, //二维码弹窗控制
+      codeImg_long: "",
+      codeImg_temp: "",
+      codeImg_temp_show: true,
+      addShow: false,
+      name: "",
+      sex: "",
+      health_card: "",
+      // sexArr: ["男","女"],
+      sexArr: [{ name: "N", value: "男" }, { name: "N", value: "女" }], //性别下拉
+      sexArr_new: [{ name: "N", value: "男" }, { name: "N", value: "女" }],
+      // ARR: [{OPERATOR_CODE: "Q",value: "12a3"},{OPERATOR_CODE: "W",value: "456"}],
 
-            fullscreenLoading: false,
+      fullscreenLoading: false,
 
-            usericCard: '',
-            username: '',
-            usersex: '',
-            useridCard: '',
-            userphone: '',
+      usericCard: "",
+      username: "",
+      usersex: "",
+      useridCard: "",
+      userphone: "",
 
-            startTime: '',
-            endTime: '',
+      startTime: "",
+      endTime: "",
 
-            errTips: '',
+      errTips: "",
 
-            pickerOptions0: {
-                disabledDate: (time) => {
-                    if (this.endTime != "") {
-                        return time.getTime() > Date.now() || time.getTime() > this.endTime;
-                    } else {
-                        return time.getTime() > Date.now();
-                    }
-
-                }
-            },
-            pickerOptions1: {
-                disabledDate: (time) => {
-                    return time.getTime() < this.startTime || time.getTime() > Date.now();
-                }
-            },
+      pickerOptions0: {
+        disabledDate: time => {
+          if (this.endTime != "") {
+            return time.getTime() > Date.now() || time.getTime() > this.endTime;
+          } else {
+            return time.getTime() > Date.now();
+          }
         }
+      },
+      pickerOptions1: {
+        disabledDate: time => {
+          return time.getTime() < this.startTime || time.getTime() > Date.now();
+        }
+      }
+    };
+  },
+  methods: {
+    back() {
+      this.$router.go(-1);
     },
-    methods: {
-        back(){
-            this.$router.go(-1);
-        },
 
-        // 清空按钮
-        del(){
-            console.log(this.username)
-            this.usericCard = "";
-            this.username = "";
-            this.usersex = "";
-            this.useridCard = "";
-            this.userphone = "";
-            this.startTime = "";
-            this.endTime = "";
-            this.option = "";
-        },
-
-        // 操作员
-        selectOption(){
-            console.log(this.option)
-        },
-
-        // 查询按钮
-        inquireBtn(){
-                // "name": this.username,
-                // "phone": this.userphone,
-                // "id_number": this.useridCard,
-            this.fullscreenLoading = true;
-            axios.post(baseUrl + "api/mq/find_patient",JSON.stringify({
-                "keyword": this.usericCard,
-                "sex": this.usersex,
-                "start_time": this.startTime,
-                "end_time": this.endTime,
-                "op_code": this.option
-            }))
-            .then(res=>{
-                console.log(res);
-                this.fullscreenLoading = false;
-                if(res.data.status == 200301){
-                    this.tableData = res.data.msg;
-                    this.listNum = this.tableData.length;
-                    localStorage.setItem("tableData",JSON.stringify(res.data.msg));
-                }else{
-                    this.orderTips = "获取列表失败"+res.data.status;
-                    this.fails();
-                }
-            })
-            .catch(error=>{
-                this.fullscreenLoading = false;
-                this.orderTips = "服务器出错"+error;
-                this.fails();
-            })
-        },
-
-        selectSex(){
-            console.log(this.usersex)
-        },
-        selectStartTime(){
-            console.log(this.startTime)
-        },
-        selectEndTime(){
-            console.log(this.endTime)
-        },
-
-        fails() {
-            this.$message.error(this.orderTips);
-        },
-
-        enter(e){
-            // if (e.relatedTarget) {
-            //     e.target.click();
-            // }
-            // console.log(e.relatedTarget);
-            // console.log(!e.target.getAttribute('readonly'))
-            // e.relatedTarget = "select";
-            // console.log("===");
-        },
-
-
-        created:function(){
-            //向后台获取数据
-            var that = this;
-            that.listNum = that.tableData.length
-        },
-        current_change:function(currentPage){
-            this.currentPage = currentPage;
-        },
-
-        handleCurrentChange(val) {
-            console.log(`当前页: ${val}`);
-            this.currentPage = val;
-        },
-        handleSizeChange(val) {
-            console.log(`每页 ${val} 条`);
-            this.pagesize = val
-        },
-
-        // 修改
-        handleEdit($event, row) {
-            console.log(row);
-            var data = JSON.stringify(row);
-            this.$router.push({
-                path: 'modifier',
-                query: {
-                    data: data
-                }
-            })
-        },
-        
-
-
-        // 预约挂号事件
-        order(index, row) {
-            console.log(index, row);
-            this.$router.push({path: 'order', query: {
-                    treatCard: row.CARD_ID_NUMBER,
-                    name: row.PAT_NAME,
-                    idCard: row.ID_NUMBER,
-                    phone: row.PHONE_NO,
-                    service: row.BANK,
-                    orderNumber: row.WORK_UNITS,
-                    optioner: row.OPPERATER,
-                    sex: row.PHYSI_SEX_NAME,
-                }})
-        },
-        
-        // 退号
-        backNum(index, row){
-            this.$router.push({
-                path: 'inquireOrder'
-            })
-        },
-
-        // 补录
-        add(index, row){
-            console.log(index, row);
-            
-            axios.post(baseUrl + 'api/accounts/user/health_card/rebuild', JSON.stringify({
-                "medical_card_number": row.CARD_ID_NUMBER,
-                "name": row.PAT_NAME,
-                "id_number": row.ID_NUMBER,
-                "phone": row.PHONE_NO
-            })).then(res=>{
-                console.log(res);
-                if(res.data.status == 200025){
-                    this.addShow = true;
-                    this.name = res.data.msg.name;
-                    this.sex = res.data.msg.sex;
-                    this.health_card = res.data.msg.health_card_number;
-                    this.inquireBtn();
-                }else if(res.data.status == 400046){
-                    this.open6();
-                }
-            }).catch(error=>{
-
-            })
-        },
-
-
-        // 互创补录
-        addBind(index,row){
-            console.log(row);
-            localStorage.setItem("addBind", JSON.stringify(row));
-            var data = JSON.stringify(row);
-            this.$router.push({
-                path: 'bind',
-                query: {
-                    data:data
-                }
-            })
-        },
-
-        open6() {
-            this.$notify.error({
-            title: '错误',
-            message: '当前手机号或身份证已有健康卡号'
-            });
-        },
-        // 二维码事件
-        codeShow(index, row) {
-            console.log(index, row);
-            this.centerDialogVisible = true;
-            console.log(row.health_card_number)
-            if(row.health_card_number != undefined){
-                axios.post(baseUrl + 'api/accounts/tem_qrcode', JSON.stringify({
-                    "name": row.PAT_NAME,
-                    "id_number": row.ID_NUMBER,
-                    "phone": row.PHONE_NO
-                }))
-                .then(res=>{
-                    console.log(res);
-                    this.codeImg_long = res.data.msg.medical_image_url;
-                    this.codeImg_temp = res.data.msg.image_url;
-                    this.codeImg_temp_show = true;
-                }).catch(error=>{
-                    
-                })
-            }else if(row.health_card_number == undefined){
-                axios.post(baseUrl + "api/accounts/medical_qrcode", JSON.stringify({
-                    "code": row.CARD_ID_NUMBER
-                })).then(res=>{
-                    console.log(res);
-                    this.codeImg_long = res.data.msg.medical_image_url;
-                    this.codeImg_temp_show = false;
-                }).catch(error=>{
-                    
-                })
-            }
-            
-            
-        },
-
-
-
-        // 获取操作员列表
-        getOption(){
-            axios.get(baseUrl+"api/mq/depart_doctor?depart_code").then(res=>{
-                console.log(res);
-                if(res.data.status == 200302){
-                    this.optionArr = res.data.msg;
-                    this.optionArr_new = res.data.msg;
-                }
-            }).catch(err=>{
-                console.log(err);
-            })
-        },
-
-
-
-        // 操作员简码
-        opFilter(val) {
-            if (val) {
-                var tempArr = [];
-                this.optionArr_new.forEach(function(opt, index){
-                if (opt['PINYIN_CODE'].toUpperCase().indexOf(val.toUpperCase()) == 0 || opt['STAFF_NAME'].indexOf(val) == 0) {
-                    tempArr.push(opt);
-                }
-                });
-                this.optionArr = tempArr;
-            } else {
-                this.optionArr = this.optionArr_new;
-            }
-        },
-
-
-
-        sexFilter(val) {
-            if (val) {
-                var tempArr = [];
-                this.sexArr_new.forEach(function(opt, index){
-                if (opt['name'].toUpperCase().indexOf(val.toUpperCase()) == 0 || opt['value'].indexOf(val) == 0) {
-                    tempArr.push(opt);
-                }
-                });
-                this.sexArr = tempArr;
-            } else {
-                this.sexArr = this.sexArr_new;
-            }
-        },
-
-
-
-
-        dateFormat:function(row, column) {  
-           var data = '' ;
-           data = row.REGIST_DATE.replace("T"," ")
-           return data   
-        },
-        
+    // 清空按钮
+    del() {
+      console.log(this.username);
+      this.usericCard = "";
+      this.username = "";
+      this.usersex = "";
+      this.useridCard = "";
+      this.userphone = "";
+      this.startTime = "";
+      this.endTime = "";
+      this.option = "";
     },
-    mounted(){
 
-        this.getOption()
-        if(localStorage.getItem("tableData") != null){
-            this.tableData = JSON.parse(localStorage.getItem("tableData"));
+    // 操作员
+    selectOption() {
+      console.log(this.option);
+    },
+
+    // 查询按钮
+    inquireBtn() {
+      // "name": this.username,
+      // "phone": this.userphone,
+      // "id_number": this.useridCard,
+      this.fullscreenLoading = true;
+      axios
+        .post(
+          baseUrl + "api/mq/find_patient",
+          JSON.stringify({
+            keyword: this.usericCard,
+            sex: this.usersex,
+            start_time: this.startTime,
+            end_time: this.endTime,
+            op_code: this.option
+          })
+        )
+        .then(res => {
+          console.log(res);
+          this.fullscreenLoading = false;
+          if (res.data.status == 200301) {
+            this.tableData = res.data.msg;
             this.listNum = this.tableData.length;
+            localStorage.setItem("tableData", JSON.stringify(res.data.msg));
+          } else {
+            this.orderTips = "获取列表失败" + res.data.status;
+            this.fails();
+          }
+        })
+        .catch(error => {
+          this.fullscreenLoading = false;
+          this.orderTips = "服务器出错" + error;
+          this.fails();
+        });
+    },
+
+    selectSex() {
+      console.log(this.usersex);
+    },
+    selectStartTime() {
+      console.log(this.startTime);
+    },
+    selectEndTime() {
+      console.log(this.endTime);
+    },
+
+    fails() {
+      this.$message.error(this.orderTips);
+    },
+
+    enter(e) {
+      // if (e.relatedTarget) {
+      //     e.target.click();
+      // }
+      // console.log(e.relatedTarget);
+      // console.log(!e.target.getAttribute('readonly'))
+      // e.relatedTarget = "select";
+      // console.log("===");
+    },
+
+    created: function() {
+      //向后台获取数据
+      var that = this;
+      that.listNum = that.tableData.length;
+    },
+    current_change: function(currentPage) {
+      this.currentPage = currentPage;
+    },
+
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+      this.currentPage = val;
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+      this.pagesize = val;
+    },
+
+    // 修改
+    handleEdit($event, row) {
+      console.log(row);
+      var data = JSON.stringify(row);
+      this.$router.push({
+        path: "modifier",
+        query: {
+          data: data
         }
+      });
+    },
 
-        
-
-        // 时间选择默认时间
-        var date = new Date();
-        var year = date.getFullYear();
-        
-        var month = date.getMonth()+1;
-        if(month<10){
-            month = "0"+month;
+    // 预约挂号事件
+    order(index, row) {
+      console.log(index, row);
+      this.$router.push({
+        path: "order",
+        query: {
+          treatCard: row.CARD_ID_NUMBER,
+          name: row.PAT_NAME,
+          idCard: row.ID_NUMBER,
+          phone: row.PHONE_NO,
+          service: row.BANK,
+          orderNumber: row.WORK_UNITS,
+          optioner: row.OPPERATER,
+          sex: row.PHYSI_SEX_NAME
         }
-        var day = date.getDate();
-        this.startTime = year + "-" + month + "-" + day + " " + "00:00:00";
-        this.endTime = year + "-" + month + "-" + day + " " +"23:59:59";
+      });
+    },
 
+    // 退号
+    backNum(index, row) {
+      this.$router.push({
+        path: "inquireOrder"
+      });
+    },
 
-
-         function UrlSearch(path, param) {
-                var name;
-                var str = decodeURI(path); //取得整个地址栏
-                var num = str.indexOf("?")
-                str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
-                var arr = str.split("&"); //各个参数放到数组里
-                for(var i=0;i < arr.length;i++){
-                    num=arr[i].indexOf("=");
-                    if(num>0){
-                        name = arr[i].substring(0,num);
-                        if (name === param) {
-                            return arr[i].substr(num+1);
-                        }
-                        continue;
-                    }
-                }
-            };
-
-            var url = window.location.href;
-            this.option = UrlSearch(url, 'opNo');
-
-        this.listNum = this.tableData.length;
-        var ws = new WebSocket("ws://127.0.0.1:8804");
-            ws.onopen = function() { 
-                console.log("连接websocket成功");
-                this.inputMsg = '';
-            };
-            ws.onmessage = evt=> {
-                var data = JSON.parse(evt.data);
-                console.log(data);
-                this.usericCard = data.msg.medical_card_number;
-                this.inquireBtn();
-            };
-            ws.onclose = function(evt) {
-                console.log("Connection closed.");
-            };
-        if(this.$route.query.icCard != undefined){
-            this.startTime = '';
-            this.endTime = '';
-            this.usericCard = this.$route.query.icCard;
+    // 补录
+    add(index, row) {
+      axios
+        .post(
+          baseUrl + "api/accounts/user/health_card/rebuild",
+          JSON.stringify({
+            medical_card_number: row.CARD_ID_NUMBER,
+            name: row.PAT_NAME,
+            id_number: row.ID_NUMBER,
+            phone: row.PHONE_NO
+          })
+        )
+        .then(res => {
+          console.log(res);
+          if (res.data.status == 200025) {
+            this.addShow = true;
+            this.name = res.data.msg.name;
+            this.sex = res.data.msg.sex;
+            this.health_card = res.data.msg.health_card_number;
             this.inquireBtn();
-        };
-        this.inquireBtn();
-        
+          } else if (res.data.status == 400046) {
+            this.open6();
+          }
+        })
+        .catch(error => {});
+    },
+
+    // 互创补录
+    addBind(index, row) {
+      console.log(row);
+      if (row.PHYSI_SEX_NAME == "" && row.ID_NUMBER == "") {
+        this.orderTips = "当前用户信息（性别或身份证）不完善，请先完善用户信息";
+        this.fails();
+      } else {
+        localStorage.setItem("addBind", JSON.stringify(row));
+        var data = JSON.stringify(row);
+        this.$router.push({
+          path: "bind",
+          query: {
+            data: data
+          }
+        });
+      }
+    },
+
+    open6() {
+      this.$notify.error({
+        title: "错误",
+        message: "当前手机号或身份证已有健康卡号"
+      });
+    },
+    // 二维码事件
+    codeShow(index, row) {
+      console.log(index, row);
+      this.centerDialogVisible = true;
+      console.log(row.health_card_number);
+      if (row.health_card_number != undefined) {
+        axios
+          .post(
+            baseUrl + "api/accounts/tem_qrcode",
+            JSON.stringify({
+              name: row.PAT_NAME,
+              id_number: row.ID_NUMBER,
+              phone: row.PHONE_NO
+            })
+          )
+          .then(res => {
+            console.log(res);
+            this.codeImg_long = res.data.msg.medical_image_url;
+            this.codeImg_temp = res.data.msg.image_url;
+            this.codeImg_temp_show = true;
+          })
+          .catch(error => {});
+      } else if (row.health_card_number == undefined) {
+        axios
+          .post(
+            baseUrl + "api/accounts/medical_qrcode",
+            JSON.stringify({
+              code: row.CARD_ID_NUMBER
+            })
+          )
+          .then(res => {
+            console.log(res);
+            this.codeImg_long = res.data.msg.medical_image_url;
+            this.codeImg_temp_show = false;
+          })
+          .catch(error => {});
+      }
+    },
+
+    // 获取操作员列表
+    getOption() {
+      axios
+        .get(baseUrl + "api/mq/depart_doctor?depart_code")
+        .then(res => {
+          console.log(res);
+          if (res.data.status == 200302) {
+            this.optionArr = res.data.msg;
+            this.optionArr_new = res.data.msg;
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+
+    // 操作员简码
+    opFilter(val) {
+      if (val) {
+        var tempArr = [];
+        this.optionArr_new.forEach(function(opt, index) {
+          if (
+            opt["PINYIN_CODE"].toUpperCase().indexOf(val.toUpperCase()) == 0 ||
+            opt["STAFF_NAME"].indexOf(val) == 0
+          ) {
+            tempArr.push(opt);
+          }
+        });
+        this.optionArr = tempArr;
+      } else {
+        this.optionArr = this.optionArr_new;
+      }
+    },
+
+    sexFilter(val) {
+      if (val) {
+        var tempArr = [];
+        this.sexArr_new.forEach(function(opt, index) {
+          if (
+            opt["name"].toUpperCase().indexOf(val.toUpperCase()) == 0 ||
+            opt["value"].indexOf(val) == 0
+          ) {
+            tempArr.push(opt);
+          }
+        });
+        this.sexArr = tempArr;
+      } else {
+        this.sexArr = this.sexArr_new;
+      }
+    },
+
+    dateFormat: function(row, column) {
+      var data = "";
+      data = row.REGIST_DATE.replace("T", " ");
+      return data;
     }
-}
+  },
+  mounted() {
+    this.getOption();
+    if (localStorage.getItem("tableData") != null) {
+      this.tableData = JSON.parse(localStorage.getItem("tableData"));
+      this.listNum = this.tableData.length;
+    }
+
+    // 时间选择默认时间
+    var date = new Date();
+    var year = date.getFullYear();
+
+    var month = date.getMonth() + 1;
+    if (month < 10) {
+      month = "0" + month;
+    }
+    var day = date.getDate();
+    this.startTime = year + "-" + month + "-" + day + " " + "00:00:00";
+    this.endTime = year + "-" + month + "-" + day + " " + "23:59:59";
+
+    function UrlSearch(path, param) {
+      var name;
+      var str = decodeURI(path); //取得整个地址栏
+      var num = str.indexOf("?");
+      str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+      var arr = str.split("&"); //各个参数放到数组里
+      for (var i = 0; i < arr.length; i++) {
+        num = arr[i].indexOf("=");
+        if (num > 0) {
+          name = arr[i].substring(0, num);
+          if (name === param) {
+            return arr[i].substr(num + 1);
+          }
+          continue;
+        }
+      }
+    }
+
+    var url = window.location.href;
+    this.option = UrlSearch(url, "opNo");
+
+    this.listNum = this.tableData.length;
+    var ws = new WebSocket("ws://127.0.0.1:8804");
+    ws.onopen = function() {
+      console.log("连接websocket成功");
+      this.inputMsg = "";
+    };
+    ws.onmessage = evt => {
+      var data = JSON.parse(evt.data);
+      console.log(data);
+      this.usericCard = data.msg.medical_card_number;
+      this.inquireBtn();
+    };
+    ws.onclose = function(evt) {
+      console.log("Connection closed.");
+    };
+    if (this.$route.query.icCard != undefined) {
+      this.startTime = "";
+      this.endTime = "";
+      this.usericCard = this.$route.query.icCard;
+      this.inquireBtn();
+    }
+    this.inquireBtn();
+  }
+};
 </script>
 <style lang="scss" scoped>
-    @import './inquire.scss'
+@import "./inquire.scss";
 </style>
 <style>
-    .el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
-        background-color: #ddd;
-    }
-    .el-autocomplete-suggestion li.highlighted, .el-autocomplete-suggestion li:hover{
-        background-color: #ddd;
-    }
-    .el-table th{
-        padding: 5px 0 !important;
-    }
-    .el-table td, .el-table th{    
-        padding: 5px 0 !important;
-    };
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover {
+  background-color: #ddd;
+}
+.el-autocomplete-suggestion li.highlighted,
+.el-autocomplete-suggestion li:hover {
+  background-color: #ddd;
+}
+.el-table th {
+  padding: 5px 0 !important;
+}
+.el-table td,
+.el-table th {
+  padding: 5px 0 !important;
+}
 </style>

@@ -1,46 +1,45 @@
-.record{
+.record {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    min-width: 1200px;
-    .record_header{
+    min-width: 1260px;
+    .record_header {
         border-bottom: 1px dashed #cccccc;
         font-size: 18px;
         height: 50px;
         line-height: 50px;
-        p:nth-child(1){
+        p:nth-child(1) {
             float: left;
             padding-left: 2%;
         }
     }
-    
-    .record_main{
+    .record_main {
         margin-top: 1%;
         padding-left: 2%;
         padding-right: 2%;
         flex: 1;
         overflow-y: auto;
-        .record_left{
+        .record_left {
             float: left;
             height: 100%;
             width: 18%;
             padding-top: 15px;
             // padding-right: 15px;
-            h1{
+            h1 {
                 font-size: 18px;
                 float: left;
                 height: 40px;
                 line-height: 40px;
             }
-            ul{
+            ul {
                 margin-top: 10%;
-                li{
+                li {
                     height: 40px;
                     line-height: 40px;
                     margin-bottom: 8px;
                     font-size: 14px;
-                    input{
+                    input {
                         width: 70%;
                         height: 40px;
                         border-radius: 4px;
@@ -48,12 +47,12 @@
                         padding-left: 10px;
                         border: 1px solid #ddd;
                     }
-                    label{
+                    label {
                         text-align: justify;
                         float: left;
                         height: 100%;
                     }
-                    input::-webkit-input-placeholder{
+                    input::-webkit-input-placeholder {
                         font-size: 12px;
                     }
                     label:after {
@@ -61,24 +60,23 @@
                         display: inline-block;
                         width: 80px;
                     }
-                    select{
-                        width:70%;
-                        height:100%;
+                    select {
+                        width: 70%;
+                        height: 100%;
                         border-radius: 4px;
                     }
-                    
                 }
             }
         }
-        .userList{
+        .userList {
             padding-left: 18%;
         }
-        .record_top{
+        .record_top {
             width: 70%;
             margin: 0 auto;
         }
     }
-    .record_footer{
+    .record_footer {
         padding-top: 2%;
         padding-left: 2%;
         padding-right: 2%;
