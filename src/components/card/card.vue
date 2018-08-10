@@ -85,6 +85,10 @@
                         <h5>
                             <label for="" style="width:70px">挂号来源：</label>
                             <el-autocomplete class="inline-input" clearable style="width:80%" v-model="source_w" :fetch-suggestions="querySearch_w" placeholder="请输入内容" @select="handleSelect_w" >
+                                <template slot-scope="{ item }">
+                                    <span>{{ item.value }}</span>
+                                    <span style="float:right">{{ item.name }}</span>
+                                </template>
                             </el-autocomplete>
                         </h5>
                         <h5>
@@ -149,6 +153,10 @@
                         <h5>
                             <label for="" style="width:70px">挂号来源：</label>
                             <el-autocomplete class="inline-input" clearable style="width:80%" v-model="source_m" :fetch-suggestions="querySearch_m" placeholder="请输入内容" @select="handleSelect_m" >
+                                <template slot-scope="{ item }">
+                                    <span>{{ item.value }}</span>
+                                    <span style="float:right">{{ item.name }}</span>
+                                </template>
                             </el-autocomplete>
                         </h5>
                         <h5>

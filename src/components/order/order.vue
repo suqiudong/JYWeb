@@ -143,7 +143,10 @@
                             </option>
                         </select> -->
                         <el-autocomplete class="inline-input" clearable style="width:60%" v-model="source" :fetch-suggestions="querySearch" placeholder="请输入内容" @select="handleSelect" >
-                            
+                            <template slot-scope="{ item }">
+                              <span>{{ item.value }}</span>
+                              <span style="float:right">{{ item.name }}</span>
+                            </template>
                         </el-autocomplete>
 
                         <!-- <el-select v-model="source" clearable style="width:60%" filterable placeholder="==请选择==" :filterMethod="sourceFilter">
@@ -620,7 +623,7 @@ export default {
     createFilter(queryString) {
       return restaurant => {
         return (
-          restaurant.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
         );
       };
     },

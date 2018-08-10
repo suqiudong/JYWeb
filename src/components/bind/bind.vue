@@ -1642,7 +1642,8 @@
                 console.log(data);
                 var date = new Date();
                 var year = date.getFullYear();
-                if(data.PHYSI_SEX_NAME == "男" || (data.ID_NUMBER).slice(17,18)%2 !=0){
+                this.orderNum = data.WORK_UNITS;
+                if(data.PHYSI_SEX_NAME == "男" || (data.ID_NUMBER).slice(16,17)%2 !=0){
                     this.name_m = data.PAT_NAME;
                     this.sex_m = data.PHYSI_SEX_NAME;
                     this.idCard_m = data.ID_NUMBER;
@@ -1703,7 +1704,7 @@
                         this.tipsPop = true;
                     })
 
-                }else if(data.PHYSI_SEX_NAME == "女" || (data.ID_NUMBER).slice(17,18)%2 ==0){
+                }else if(data.PHYSI_SEX_NAME == "女" || (data.ID_NUMBER).slice(16,17)%2 ==0){
                     this.name_w = data.PAT_NAME;
                     this.sex_w = data.PHYSI_SEX_NAME;
                     this.idCard_w = data.ID_NUMBER;
@@ -1762,6 +1763,8 @@
                         this.tips = err;
                         this.tipsPop = true;
                     })
+                }else {
+                    
                 }
             }
         },

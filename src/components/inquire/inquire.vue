@@ -426,7 +426,7 @@ export default {
       if (row.PHYSI_SEX_NAME == "" && row.ID_NUMBER == "") {
         this.orderTips = "当前用户信息（性别或身份证）不完善，请先完善用户信息";
         this.fails();
-      } else {
+      }else {
         localStorage.setItem("addBind", JSON.stringify(row));
         var data = JSON.stringify(row);
         this.$router.push({
