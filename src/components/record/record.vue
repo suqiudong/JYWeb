@@ -277,7 +277,7 @@ export default {
       //     "phone": this.phone,
       //     "id_number": this.idCard,register_list
       // axios.get(baseUrl + "api/mq/register_record?keyword=" + this.inputMsg + "&start_date=" + this.value6 + "&end_date=" + this.value6)
-      console.log(this.option,"请求前操作员")
+      console.log(this.option, "请求前操作员");
       if (this.status == "3") {
         axios
           .post(
@@ -335,11 +335,14 @@ export default {
           .catch(error => {
             this.fullscreenLoading = false;
             console.log(error);
-            this.errMsg = error;
-            this.errPop = true;
+            if (window.navigator.onLine == false) {
+              this.$message.error("获取信息失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(error);
+            }
           });
       } else {
-        console.log(this.option,"请求时操作员")
+        console.log(this.option, "请求时操作员");
         axios
           .post(
             baseUrl + "api/mq/register_list",
@@ -393,8 +396,11 @@ export default {
           .catch(error => {
             this.fullscreenLoading = false;
             console.log(error);
-            this.errMsg = error;
-            this.errPop = true;
+            if (window.navigator.onLine == false) {
+              this.$message.error("获取信息失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(error);
+            }
           });
       }
 
@@ -429,8 +435,8 @@ export default {
         })
         .catch(error => {
           console.log(error);
-          this.orderTips = "服务器出错" + error;
-          this.fails();
+          // this.orderTips = "服务器出错" + error;
+          // this.fails();
         });
     },
     selectRoom() {
@@ -448,8 +454,8 @@ export default {
         })
         .catch(err => {
           console.log(err);
-          this.orderTips = "服务器出错" + err;
-          this.fails();
+          // this.orderTips = "服务器出错" + err;
+          // this.fails();
         });
     },
 
@@ -534,8 +540,11 @@ export default {
         })
         .catch(error => {
           console.log(error);
-          this.errMsg = error;
-          this.errPop = true;
+          if (window.navigator.onLine == false) {
+            this.$message.error("操作失败，网络请求不稳定，请稍候再试！");
+          } else {
+            this.$message.error(error);
+          }
         });
     },
 
@@ -626,7 +635,6 @@ export default {
     this.startTime = year + "-" + month + "-" + day + " " + "00:00:00";
     this.endTime = year + "-" + month + "-" + day + " " + "23:59:59";
     // console.log(this.startTime);
-    
 
     // 获取医院列表
     this.getHospital();

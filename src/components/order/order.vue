@@ -352,8 +352,11 @@ export default {
           })
           .catch(err => {
             console.log(err);
-            this.orderTips = err;
-            this.fails();
+            if (window.navigator.onLine == false) {
+              this.$message.error("获取信息失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(err);
+            }
           });
       }
     },
@@ -488,10 +491,13 @@ export default {
               this.fails();
             }
           })
-          .catch(error => {
-            console.log(error);
-            this.orderTips = "服务器出错" + error;
-            this.fails();
+          .catch(err => {
+            console.log(err);
+            if (window.navigator.onLine == false) {
+              this.$message.error("获取信息失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(err);
+            }
           });
       }
 
@@ -519,8 +525,8 @@ export default {
         })
         .catch(error => {
           console.log(error);
-          this.orderTips = "服务器出错" + error;
-          this.fails();
+          // this.orderTips = "服务器出错" + error;
+          // this.fails();
         });
     },
     getTime() {
@@ -581,8 +587,11 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.orderTips = "服务器出错" + error;
-            this.fails();
+            if (window.navigator.onLine == false) {
+              this.$message.error("挂号失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(error);
+            }
           });
       }
       // }
@@ -623,7 +632,8 @@ export default {
     createFilter(queryString) {
       return restaurant => {
         return (
-          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) ===
+          0
         );
       };
     },
@@ -742,8 +752,8 @@ export default {
           })
           .catch(err => {
             console.log(err);
-            this.orderTips = "服务器出错" + err;
-            this.fails();
+            // this.orderTips = "服务器出错" + err;
+            // this.fails();
           });
       }
 

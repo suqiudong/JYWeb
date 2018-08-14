@@ -806,8 +806,12 @@ export default {
           .catch(err => {
             console.log(err);
             this.loading = false;
-            this.tips = err;
-            this.tipsPop = true;
+            if(window.navigator.onLine == false){
+              this.tips = "获取验证码失败，网络请求不稳定，请稍候再试！";
+            }else { 
+              this.tips = err;
+              this.tipsPop = true;
+            }
           });
       }
     },
@@ -876,8 +880,12 @@ export default {
                 .catch(err => {
                   console.log(err);
                   this.loading = false;
-                  this.tips = err;
-                  this.tipsPop = true;
+                  if(window.navigator.onLine == false){
+                    this.tips = "修改失败，网络请求不稳定，请稍候再试！";
+                  }else { 
+                    this.tips = err;
+                    this.tipsPop = true;
+                  }
                 });
             } else if (res.data.status == 400007) {
               this.tips = "验证码错误" + res.data.status;
@@ -886,8 +894,12 @@ export default {
           })
           .catch(err => {
             this.loading = false;
-            this.tips = err;
-            this.tipsPop = true;
+            if(window.navigator.onLine == false){
+              this.tips = "修改失败，网络请求不稳定，请稍候再试！";
+            }else { 
+              this.tips = err;
+              this.tipsPop = true;
+            }
           });
       }
     },
@@ -899,20 +911,7 @@ export default {
         this.tipsPop = true;
       } else {
         this.dialogVisible = true;
-        // this.$alert('这是一段内容', '标题名称', {
-        //     confirmButtonText: '确定',
-        //     showCancelButton: true,
-        //     callback: action => {
-        //         this.$message({
-        //         type: 'warning',
-        //         message: `action: ${ action }`
-        //         });
-        //     }
-        // });
       }
-      // "id_face_image": this.userFaceImg,
-      // "scene_face_image": this.userSceneImg,
-      // console.log(this.faceImg);
     },
     confirmBtn() {
       this.loading = true;
@@ -981,9 +980,14 @@ export default {
           })
           .catch(err => {
             console.log(err);
-            this.tips = "服务器错误" + err;
-            this.tipsPop = true;
             this.loading = false;
+            if(window.navigator.onLine == false){
+              this.tips = "修改失败，网络请求不稳定，请稍候再试！";
+              this.tipsPop = true;
+            }else {
+              this.tips = "服务器错误" + err;
+              this.tipsPop = true;
+            }
           });
       } else {
         axios
@@ -1004,8 +1008,14 @@ export default {
           .catch(err => {
             console.log(err);
             this.loading = false;
-            this.tips = "服务器错误" + err;
-            this.tipsPop = true;
+            console.log(window.navigator.onLine)
+            if(window.navigator.onLine == false){
+              this.tips = "修改失败，网络请求不稳定，请稍候再试！";
+              this.tipsPop = true;
+            }else {
+              this.tips = "服务器错误" + err;
+              this.tipsPop = true;
+            }
           });
       }
     },
@@ -1262,8 +1272,15 @@ export default {
         })
         .catch(err => {
           console.log(err);
-          this.tips = err;
-          this.tipsPop = true;
+          
+          console.log(window.navigator.onLine,"网络状态");
+          if(window.navigator.onLine == false){
+            this.tips = "获取用户头像失败，网络请求不稳定,请稍后再试!";
+            this.tipsPop = true;
+          }else {
+            this.tips = err;
+            this.tipsPop = true;
+          }
         });
     }
   }

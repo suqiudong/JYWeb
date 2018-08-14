@@ -217,7 +217,7 @@ export default {
 
       hospitalNum: "",
       hospitalIndex: "",
-      tempTime: '',
+      tempTime: ""
     };
   },
   methods: {
@@ -266,8 +266,8 @@ export default {
           })
           .catch(err => {
             console.log(err);
-            this.orderTips = "服务器出错" + err;
-            this.fails();
+            // this.orderTips = "服务器出错" + err;
+            // this.fails();
           });
       }
     },
@@ -291,8 +291,8 @@ export default {
           })
           .catch(err => {
             console.log(err);
-            this.orderTips = "服务器出错" + err;
-            this.fails();
+            // this.orderTips = "服务器出错" + err;
+            // this.fails();
           });
       }
     },
@@ -314,8 +314,8 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.orderTips = "服务器出错";
-            this.fails();
+            // this.orderTips = "服务器出错";
+            // this.fails();
           });
       }
     },
@@ -343,8 +343,8 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.orderTips = "服务器出错";
-            this.fails();
+            // this.orderTips = "服务器出错";
+            // this.fails();
           });
       }
     },
@@ -376,8 +376,8 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.orderTips = "服务器出错";
-            this.fails();
+            // this.orderTips = "服务器出错";
+            // this.fails();
           });
       }
     },
@@ -433,7 +433,7 @@ export default {
         this.tipsMsg = "请先输入用户信息";
         this.popshow = true;
       } else {
-        console.log(this.tempTime); 
+        console.log(this.tempTime);
         this.fullscreenLoading = true;
         axios
           .post(
@@ -470,8 +470,11 @@ export default {
           .catch(err => {
             this.fullscreenLoading = false;
             console.log(err);
-            tthis.orderTips = "服务器出错" + err;
-            this.fails();
+            if (window.navigator.onLine == false) {
+              this.$message.error("操作失败，网络请求不稳定，请稍候再试！");
+            } else {
+              this.$message.error(err);
+            }
           });
       }
     },

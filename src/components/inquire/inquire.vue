@@ -309,8 +309,15 @@ export default {
         })
         .catch(error => {
           this.fullscreenLoading = false;
-          this.orderTips = "服务器出错" + error;
-          this.fails();
+          // console.log(error.response.onLine)
+          console.log(window.navigator.onLine,"网络状态");
+          if(window.navigator.onLine == false){
+            this.orderTips = "网络请求不稳定  请稍后再试!";
+            this.fails();
+          }else {
+            this.orderTips = "服务器出错" + error;
+            this.fails();
+          }
         });
     },
 
