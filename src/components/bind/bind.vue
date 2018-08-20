@@ -1266,6 +1266,7 @@ export default {
     subHisBtn() {
       var phoneReg = /^[1][0,1,2,3,4,5,6,7,8,9][0-9]{9}$/;
       var idCardreg = /^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/;
+      var reg = /\s+/;
       console.log(this.phone_w);
       if (
         this.name_m != "" &&
@@ -1284,6 +1285,12 @@ export default {
         this.tipsPop = true;
       } else if (this.name_w != "" && !phoneReg.test(this.phone_w)) {
         this.tips = "请输入女方正确的手机号";
+        this.tipsPop = true;  
+      } else if (this.name_w != "" && (this.icCard_w == "" || !reg.test(this.icCard_w))) {//name.replace(/(^\s*)|(\s*$)/g, "") == ""
+        this.tips = "请输入女方正确的就诊卡号";
+        this.tipsPop = true;
+      } else if (this.name_m != "" && this.icCard_m == "" || !reg.test(this.icCard_m)) {
+        this.tips = "请输入男方正确的就诊卡号";
         this.tipsPop = true;
       } else {
         console.log(this.hospitalNum);
@@ -1615,11 +1622,14 @@ export default {
           .then(res => {
             console.log(res);
             if (res.data.status == 200301) {
-              if (res.data.msg[0].CARD_ID_NUMBER != "") {
+              if (
+                res.data.msg.length > 0 &&
+                res.data.msg[0].CARD_ID_NUMBER != ""
+              ) {
                 this.icCard = res.data.msg[0].CARD_ID_NUMBER;
                 this.hasIcCard = true;
               } else if (res.data.msg.length > 1) {
-                this.icCard = "改身份证有多条数据，请查询核实";
+                this.icCard = "该身份证有多条数据，请查询核实";
                 this.hasIcCard = true;
               } else {
                 this.hasIcCard = false;
