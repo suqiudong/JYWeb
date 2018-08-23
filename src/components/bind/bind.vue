@@ -1286,10 +1286,10 @@ export default {
       } else if (this.name_w != "" && !phoneReg.test(this.phone_w)) {
         this.tips = "请输入女方正确的手机号";
         this.tipsPop = true;  
-      } else if (this.name_w != "" && (this.icCard_w == "" || !reg.test(this.icCard_w))) {//name.replace(/(^\s*)|(\s*$)/g, "") == ""
+      } else if (this.name_w != "" && this.icCard_w == "") {//name.replace(/(^\s*)|(\s*$)/g, "") == ""
         this.tips = "请输入女方正确的就诊卡号";
         this.tipsPop = true;
-      } else if (this.name_m != "" && this.icCard_m == "" || !reg.test(this.icCard_m)) {
+      } else if (this.name_m != "" && this.icCard_m == "") {
         this.tips = "请输入男方正确的就诊卡号";
         this.tipsPop = true;
       } else {
